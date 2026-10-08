@@ -1,0 +1,251 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: /tmp/researchtrack-k6-37643585579-1/tests/performance/webhook.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 24 max VUs, 1m20s max duration (incl. graceful stop):
+              * webhook: Up to 12.00 iterations/s for 50s over 4 stages (maxVUs: 12-24, gracefulStop: 30s)
+
+
+running (0m00.9s), 00/12 VUs, 0 complete and 0 interrupted iterations
+webhook   [   2% ] 00/12 VUs  00.9s/50s  01.05 iters/s
+
+running (0m01.9s), 02/12 VUs, 0 complete and 0 interrupted iterations
+webhook   [   4% ] 02/12 VUs  01.9s/50s  01.22 iters/s
+
+running (0m02.9s), 01/12 VUs, 2 complete and 0 interrupted iterations
+webhook   [   6% ] 01/12 VUs  02.9s/50s  01.30 iters/s
+
+running (0m04.0s), 01/12 VUs, 3 complete and 0 interrupted iterations
+webhook   [   8% ] 01/12 VUs  03.9s/50s  01.38 iters/s
+
+running (0m05.0s), 01/12 VUs, 5 complete and 0 interrupted iterations
+webhook   [  10% ] 01/12 VUs  04.9s/50s  01.52 iters/s
+
+running (0m05.9s), 01/12 VUs, 6 complete and 0 interrupted iterations
+webhook   [  12% ] 01/12 VUs  05.9s/50s  01.58 iters/s
+
+running (0m06.9s), 01/12 VUs, 8 complete and 0 interrupted iterations
+webhook   [  14% ] 01/12 VUs  06.9s/50s  01.70 iters/s
+
+running (0m07.9s), 02/12 VUs, 9 complete and 0 interrupted iterations
+webhook   [  16% ] 02/12 VUs  07.9s/50s  01.82 iters/s
+
+running (0m08.9s), 01/12 VUs, 11 complete and 0 interrupted iterations
+webhook   [  18% ] 01/12 VUs  08.9s/50s  01.87 iters/s
+
+running (0m09.9s), 00/12 VUs, 14 complete and 0 interrupted iterations
+webhook   [  20% ] 00/12 VUs  09.9s/50s  01.97 iters/s
+
+running (0m10.9s), 01/12 VUs, 16 complete and 0 interrupted iterations
+webhook   [  22% ] 01/12 VUs  10.9s/50s  03.00 iters/s
+
+running (0m11.9s), 01/12 VUs, 19 complete and 0 interrupted iterations
+webhook   [  24% ] 01/12 VUs  11.9s/50s  03.87 iters/s
+
+running (0m12.9s), 02/12 VUs, 23 complete and 0 interrupted iterations
+webhook   [  26% ] 02/12 VUs  12.9s/50s  05.00 iters/s
+
+running (0m13.9s), 02/12 VUs, 28 complete and 0 interrupted iterations
+webhook   [  28% ] 02/12 VUs  13.9s/50s  05.92 iters/s
+
+running (0m14.9s), 02/12 VUs, 35 complete and 0 interrupted iterations
+webhook   [  30% ] 02/12 VUs  14.9s/50s  07.00 iters/s
+
+running (0m15.9s), 03/12 VUs, 41 complete and 0 interrupted iterations
+webhook   [  32% ] 03/12 VUs  15.9s/50s  07.94 iters/s
+
+running (0m16.9s), 03/12 VUs, 49 complete and 0 interrupted iterations
+webhook   [  34% ] 03/12 VUs  16.9s/50s  08.89 iters/s
+
+running (0m18.0s), 03/12 VUs, 59 complete and 0 interrupted iterations
+webhook   [  36% ] 03/12 VUs  17.9s/50s  09.95 iters/s
+
+running (0m18.9s), 03/12 VUs, 69 complete and 0 interrupted iterations
+webhook   [  38% ] 03/12 VUs  18.9s/50s  10.91 iters/s
+
+running (0m19.9s), 04/12 VUs, 80 complete and 0 interrupted iterations
+webhook   [  40% ] 04/12 VUs  19.9s/50s  11.96 iters/s
+
+running (0m20.9s), 03/12 VUs, 93 complete and 0 interrupted iterations
+webhook   [  42% ] 03/12 VUs  20.9s/50s  12.00 iters/s
+
+running (0m21.9s), 12/12 VUs, 96 complete and 0 interrupted iterations
+webhook   [  44% ] 12/12 VUs  21.9s/50s  12.00 iters/s
+
+running (0m22.9s), 04/12 VUs, 116 complete and 0 interrupted iterations
+webhook   [  46% ] 04/12 VUs  22.9s/50s  12.00 iters/s
+
+running (0m24.0s), 03/12 VUs, 129 complete and 0 interrupted iterations
+webhook   [  48% ] 03/12 VUs  24.0s/50s  12.00 iters/s
+
+running (0m25.0s), 04/12 VUs, 140 complete and 0 interrupted iterations
+webhook   [  50% ] 04/12 VUs  24.9s/50s  12.00 iters/s
+
+running (0m26.0s), 12/12 VUs, 144 complete and 0 interrupted iterations
+webhook   [  52% ] 12/12 VUs  26.0s/50s  12.00 iters/s
+
+running (0m26.9s), 05/13 VUs, 162 complete and 0 interrupted iterations
+webhook   [  54% ] 05/13 VUs  26.9s/50s  12.00 iters/s
+
+running (0m28.0s), 04/13 VUs, 175 complete and 0 interrupted iterations
+webhook   [  56% ] 04/13 VUs  28.0s/50s  12.00 iters/s
+
+running (0m29.0s), 07/13 VUs, 184 complete and 0 interrupted iterations
+webhook   [  58% ] 07/13 VUs  29.0s/50s  12.00 iters/s
+
+running (0m29.9s), 13/13 VUs, 190 complete and 0 interrupted iterations
+webhook   [  60% ] 13/13 VUs  29.9s/50s  12.00 iters/s
+
+running (0m31.0s), 04/13 VUs, 211 complete and 0 interrupted iterations
+webhook   [  62% ] 04/13 VUs  30.9s/50s  12.00 iters/s
+
+running (0m31.9s), 04/13 VUs, 223 complete and 0 interrupted iterations
+webhook   [  64% ] 04/13 VUs  31.9s/50s  12.00 iters/s
+
+running (0m32.9s), 04/13 VUs, 235 complete and 0 interrupted iterations
+webhook   [  66% ] 04/13 VUs  32.9s/50s  12.00 iters/s
+
+running (0m34.0s), 04/13 VUs, 247 complete and 0 interrupted iterations
+webhook   [  68% ] 04/13 VUs  34.0s/50s  12.00 iters/s
+
+running (0m34.9s), 12/13 VUs, 251 complete and 0 interrupted iterations
+webhook   [  70% ] 12/13 VUs  34.9s/50s  12.00 iters/s
+
+running (0m35.9s), 04/13 VUs, 271 complete and 0 interrupted iterations
+webhook   [  72% ] 04/13 VUs  35.9s/50s  12.00 iters/s
+
+running (0m36.9s), 04/13 VUs, 283 complete and 0 interrupted iterations
+webhook   [  74% ] 04/13 VUs  36.9s/50s  12.00 iters/s
+
+running (0m37.9s), 05/13 VUs, 294 complete and 0 interrupted iterations
+webhook   [  76% ] 05/13 VUs  37.9s/50s  12.00 iters/s
+
+running (0m38.9s), 08/13 VUs, 303 complete and 0 interrupted iterations
+webhook   [  78% ] 08/13 VUs  38.9s/50s  12.00 iters/s
+
+running (0m39.9s), 13/14 VUs, 309 complete and 0 interrupted iterations
+webhook   [  80% ] 13/14 VUs  39.9s/50s  12.00 iters/s
+
+running (0m40.9s), 03/14 VUs, 330 complete and 0 interrupted iterations
+webhook   [  82% ] 03/14 VUs  40.9s/50s  10.90 iters/s
+
+running (0m42.0s), 03/14 VUs, 340 complete and 0 interrupted iterations
+webhook   [  84% ] 03/14 VUs  42.0s/50s  09.74 iters/s
+
+running (0m42.9s), 03/14 VUs, 350 complete and 0 interrupted iterations
+webhook   [  86% ] 03/14 VUs  42.9s/50s  08.41 iters/s
+
+running (0m43.9s), 02/14 VUs, 358 complete and 0 interrupted iterations
+webhook   [  88% ] 02/14 VUs  43.9s/50s  07.35 iters/s
+
+running (0m44.9s), 02/14 VUs, 365 complete and 0 interrupted iterations
+webhook   [  90% ] 02/14 VUs  44.9s/50s  06.10 iters/s
+
+running (0m45.9s), 02/14 VUs, 371 complete and 0 interrupted iterations
+webhook   [  92% ] 02/14 VUs  45.9s/50s  04.77 iters/s
+
+running (0m46.9s), 01/14 VUs, 376 complete and 0 interrupted iterations
+webhook   [  94% ] 01/14 VUs  46.9s/50s  03.63 iters/s
+
+running (0m47.9s), 01/14 VUs, 379 complete and 0 interrupted iterations
+webhook   [  96% ] 01/14 VUs  47.9s/50s  02.44 iters/s
+
+running (0m48.9s), 01/14 VUs, 381 complete and 0 interrupted iterations
+webhook   [  98% ] 01/14 VUs  48.9s/50s  00.77 iters/s
+
+running (0m49.9s), 00/14 VUs, 382 complete and 0 interrupted iterations
+webhook   [ 100% ] 00/14 VUs  49.9s/50s  00.77 iters/s
+# ResearchTrack k6 — webhook
+
+**Performance gate: PASS ✅**
+
+Generated: 2026-10-07T16:19:26.998Z  
+Target: https://api.researchtrack.blipzo.xyz  
+Project: `09a2eff6-2dde-4ce1-abfb-80dec08ad7f3`  
+Purpose: Signed Jira webhook burst and ingestion capacity  
+Workload: Ramping signed webhook arrival rate 1→2→12 req/s (50 seconds)  
+Execution mode: manual | Warm-up passes: 1 | Integrations: true | Gateway exemption: true
+GitHub workflow: Azure Production - k6 Performance (VPS) | run 37643585579 attempt 1 | source SHA: `54dcbae67793a2103b6ef78502401bf4ab04b336`
+
+## Executive summary
+
+| Measure | Result | Target / meaning |
+|---|---:|---|
+| Business requests | 383 | Measured requests only |
+| Throughput | 7.61 req/s | Business requests only |
+| Business failure rate | 0.00% | < 2.00% |
+| p50 latency | 328.26 ms | Median |
+| p90 latency | 731.79 ms | Tail trend |
+| p95 latency | 900.09 ms | < 1000 ms |
+| p99 latency | 1011.04 ms | Extreme tail |
+| Average latency | 414.95 ms | Informational |
+| Min / max latency | 261.20 ms / 1084.01 ms | Range |
+| HTTP 429 responses | 0 | 0 |
+| Correctness checks | 100.00% | > 99% |
+| Iterations / dropped | 383 / 2 | Scheduler health |
+| Max active VUs | 14 | Workload context |
+
+## Runtime threshold configuration
+
+- **Overall webhook p95:** 1000 ms — source: GitHub/runtime variable (K6_WEBHOOK_P95_MS).
+- **Correctness gates:** business failure rate < 2.00%, checks > 99%, HTTP 429 = 0.
+- **Endpoint-specific p95 gates:** none configured for operations measured in this run.
+
+## HTTP outcome distribution
+
+| Outcome | Count |
+|---|---:|
+| 2xx | 383 |
+| 3xx | 0 |
+| 4xx | 0 |
+| 5xx | 0 |
+| Network errors (status 0) | 0 |
+| 429 (subset of 4xx) | 0 |
+
+## Endpoint performance
+
+| Operation | Method | Requests | Failure | Avg | p50 | p90 | p95 | p99 | Max | Target p95 | Gate | 4xx | 5xx | 429 |
+|---|:---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|:---:|---:|---:|---:|
+| Jira webhook ingestion | POST | 383 | 0.00% | 415.0 | 328.3 | 731.8 | 900.1 | 1011.0 | 1084.0 | — | Not gated | 0 | 0 | 0 |
+
+## Slowest endpoints by p95
+
+1. **Jira webhook ingestion** — p95 900.09 ms, p99 1011.04 ms, failures 0.00%
+
+## Jira issues diagnostic
+
+Jira issues was not measured in this run (integration routes disabled or profile does not use it).
+
+## Failed / unhealthy endpoints
+
+No endpoint recorded a business failure, 4xx, 5xx, or network error.
+
+## Threshold evaluation
+
+| Metric | Rule | Result |
+|---|---|:---:|
+| `researchtrack_http_429` | `count==0` | PASS ✅ |
+| `checks` | `rate>0.99` | PASS ✅ |
+| `researchtrack_business_failures` | `rate<0.02` | PASS ✅ |
+| `researchtrack_business_duration` | `p(95)<1000` | PASS ✅ |
+
+## Interpretation notes
+
+- Business latency excludes login and warm-up requests; endpoint tables are based on explicit ResearchTrack business-operation metrics.
+- Profile p95 thresholds are runtime configuration. Change the corresponding GitHub Actions variable after baseline review; no source-code push is required.
+- Optional endpoint p95 gates come from `K6_ENDPOINT_P95_THRESHOLDS_JSON`; this is useful for the observed Jira Issues tail without forcing every endpoint to share the same target.
+- Warm-up requests execute before measured traffic to reduce cold-start/JIT/connection-pool distortion. They still exercise the deployed system but are not included in the custom business gate.
+- A threshold failure is a valid test result; reports are generated and Azure/Gateway restoration still runs.
+- Manual results measure the current deployment. The GitHub source SHA is traceability metadata, not proof that every deployed service image was built from that SHA.
+
+
+running (0m50.3s), 00/14 VUs, 383 complete and 0 interrupted iterations
+webhook ✓ [ 100% ] 00/14 VUs  50s  00.77 iters/s

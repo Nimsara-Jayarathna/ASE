@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 3,
+  "overview": {
+    "generatedAtUtc": "2026-10-07T16:19:26.998Z",
+    "profile": "webhook",
+    "purpose": "Signed Jira webhook burst and ingestion capacity",
+    "workload": "Ramping signed webhook arrival rate 1→2→12 req/s (50 seconds)",
+    "targetP95Ms": 1000,
+    "targetP95Source": "GitHub/runtime variable",
+    "targetP95SourceKey": "K6_WEBHOOK_P95_MS",
+    "maxFailureRate": 0.02,
+    "baseUrl": "https://api.researchtrack.blipzo.xyz",
+    "projectId": "09a2eff6-2dde-4ce1-abfb-80dec08ad7f3",
+    "includeIntegrations": true,
+    "gatewayBypassEnabled": true,
+    "warmupPasses": 1,
+    "executionMode": "manual",
+    "sourceRunId": "37643585579",
+    "sourceRunAttempt": "1",
+    "sourceSha": "54dcbae67793a2103b6ef78502401bf4ab04b336",
+    "sourceWorkflow": "Azure Production - k6 Performance (VPS)",
+    "testRunDurationMs": 50298.051279,
+    "passed": true,
+    "businessRequests": 383,
+    "businessThroughput": 7.6146091202524735,
+    "businessFailureRate": 0,
+    "p50": 328.261627,
+    "p90": 731.7912544,
+    "p95": 900.0913767999998,
+    "p99": 1011.0412639600003,
+    "avg": 414.9524585117495,
+    "min": 261.195269,
+    "max": 1084.0068,
+    "http429": 0,
+    "http2xx": 383,
+    "http3xx": 0,
+    "http4xx": 0,
+    "http5xx": 0,
+    "networkErrors": 0,
+    "checksRate": 1,
+    "iterations": 383,
+    "droppedIterations": 2,
+    "maxVUs": 14,
+    "dataReceivedBytes": 224622,
+    "dataSentBytes": 107391,
+    "endpointCount": 1
+  },
+  "thresholdConfiguration": {
+    "overallP95Ms": 1000,
+    "overallSource": "GitHub/runtime variable",
+    "overallSourceKey": "K6_WEBHOOK_P95_MS",
+    "endpointP95": {},
+    "correctness": {
+        "maxFailureRate": 0.02,
+        "minimumCheckRateExclusive": 0.99,
+        "maxHttp429": 0
+      }
+  },
+  "thresholds": [
+    {
+      "metric": "researchtrack_http_429",
+      "rule": "count==0",
+      "passed": true
+    },
+    {
+      "metric": "checks",
+      "rule": "rate>0.99",
+      "passed": true
+    },
+    {
+      "metric": "researchtrack_business_failures",
+      "rule": "rate<0.02",
+      "passed": true
+    },
+    {
+      "metric": "researchtrack_business_duration",
+      "rule": "p(95)<1000",
+      "passed": true
+    }
+  ],
+  "endpoints": [
+    {
+      "operation": "jira_webhook",
+      "label": "Jira webhook ingestion",
+      "category": "Webhook",
+      "method": "POST",
+      "requests": 383,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 414.9524585117495,
+      "min": 261.195269,
+      "p50": 328.261627,
+      "p90": 731.7912544,
+      "p95": 900.0913767999998,
+      "p99": 1011.0412639600003,
+      "max": 1084.0068,
+      "http2xx": 383,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    }
+  ],
+  "rawMetrics": {
+    "http_req_connecting": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "min": 0,
+        "med": 0,
+        "p(90)": 0,
+        "p(95)": 0,
+        "p(99)": 211.36047172000025,
+        "max": 245.572625,
+        "avg": 7.584520475195821
+      }
+    },
+    "iteration_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(90)": 769.2811562,
+        "p(95)": 910.8372222999999,
+        "p(99)": 1047.6599092,
+        "max": 1133.140997,
+        "avg": 434.295191091384,
+        "min": 262.17557,
+        "med": 334.587621
+      }
+    },
+    "researchtrack_op_jira_webhook_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "med": 328.261627,
+        "p(90)": 731.7912544,
+        "p(95)": 900.0913767999998,
+        "p(99)": 1011.0412639600003,
+        "max": 1084.0068,
+        "avg": 414.9524585117495,
+        "min": 261.195269
+      }
+    },
+    "researchtrack_op_jira_webhook_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 383
+      }
+    },
+    "data_sent": {
+      "contains": "data",
+      "values": {
+        "count": 107391,
+        "rate": 2135.0926580496957
+      },
+      "type": "counter"
+    },
+    "researchtrack_op_jira_webhook_http_4xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "vus": {
+      "type": "gauge",
+      "contains": "default",
+      "values": {
+        "min": 0,
+        "max": 13,
+        "value": 0
+      }
+    },
+    "researchtrack_business_network_errors": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "checks": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 1,
+        "passes": 383,
+        "fails": 0
+      },
+      "thresholds": {
+        "rate>0.99": {
+          "ok": true
+        }
+      }
+    },
+    "data_received": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "count": 224622,
+        "rate": 4465.8191378834235
+      }
+    },
+    "http_req_duration": {
+      "values": {
+        "p(90)": 731.7912544,
+        "p(95)": 900.0913767999998,
+        "p(99)": 1011.0412639600003,
+        "max": 1084.0068,
+        "avg": 414.9524585117495,
+        "min": 261.195269,
+        "med": 328.261627
+      },
+      "type": "trend",
+      "contains": "time"
+    },
+    "http_req_blocked": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "min": 0.00034,
+        "med": 0.000581,
+        "p(90)": 0.0009092000000000001,
+        "p(95)": 0.0011729,
+        "p(99)": 496.1015934400001,
+        "max": 581.842195,
+        "avg": 16.259480947780695
+      }
+    },
+    "researchtrack_business_http_4xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_jira_webhook_network_errors": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_jira_webhook_http_5xx": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    },
+    "researchtrack_business_http_5xx": {
+      "values": {
+        "rate": 0,
+        "count": 0
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "http_req_sending": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(95)": 3.661305199999995,
+        "p(99)": 13.62641926000001,
+        "max": 121.30376,
+        "avg": 1.0938800496083558,
+        "min": 0.111897,
+        "med": 0.289004,
+        "p(90)": 0.9921952000000004
+      }
+    },
+    "http_req_receiving": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "min": 0.026881,
+        "med": 0.116374,
+        "p(90)": 0.7117886000000004,
+        "p(95)": 4.0602057999999985,
+        "p(99)": 13.733931200000013,
+        "max": 60.072758,
+        "avg": 0.8633720365535257
+      }
+    },
+    "http_req_duration{expected_response:true}": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(99)": 1011.0412639600003,
+        "max": 1084.0068,
+        "avg": 414.9524585117495,
+        "min": 261.195269,
+        "med": 328.261627,
+        "p(90)": 731.7912544,
+        "p(95)": 900.0913767999998
+      }
+    },
+    "researchtrack_business_http_3xx": {
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "researchtrack_business_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 383,
+        "rate": 7.6146091202524735
+      }
+    },
+    "researchtrack_op_jira_webhook_http_429": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    },
+    "researchtrack_business_failures": {
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 383
+      },
+      "thresholds": {
+        "rate<0.02": {
+          "ok": true
+        }
+      },
+      "type": "rate"
+    },
+    "vus_max": {
+      "contains": "default",
+      "values": {
+        "value": 14,
+        "min": 12,
+        "max": 14
+      },
+      "type": "gauge"
+    },
+    "researchtrack_business_duration": {
+      "thresholds": {
+        "p(95)<1000": {
+          "ok": true
+        }
+      },
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "med": 328.261627,
+        "p(90)": 731.7912544,
+        "p(95)": 900.0913767999998,
+        "p(99)": 1011.0412639600003,
+        "max": 1084.0068,
+        "avg": 414.9524585117495,
+        "min": 261.195269
+      }
+    },
+    "http_req_waiting": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 412.9952064255876,
+        "min": 260.529069,
+        "med": 325.92861,
+        "p(90)": 729.4493462000002,
+        "p(95)": 899.6840104999999,
+        "p(99)": 1009.9301218600002,
+        "max": 1081.186268
+      }
+    },
+    "iterations": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 383,
+        "rate": 7.6146091202524735
+      }
+    },
+    "http_req_failed": {
+      "values": {
+        "fails": 383,
+        "rate": 0,
+        "passes": 0
+      },
+      "type": "rate",
+      "contains": "default"
+    },
+    "researchtrack_business_requests": {
+      "contains": "default",
+      "values": {
+        "count": 383,
+        "rate": 7.6146091202524735
+      },
+      "type": "counter"
+    },
+    "researchtrack_op_jira_webhook_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    "http_req_tls_handshaking": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(99)": 252.8624918600001,
+        "max": 376.57155,
+        "avg": 8.566838566579634,
+        "min": 0,
+        "med": 0,
+        "p(90)": 0,
+        "p(95)": 0
+      }
+    },
+    "researchtrack_op_jira_webhook_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 383,
+        "rate": 7.6146091202524735
+      }
+    },
+    "researchtrack_op_jira_webhook_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 7.6146091202524735,
+        "count": 383
+      }
+    },
+    "dropped_iterations": {
+      "values": {
+        "count": 2,
+        "rate": 0.03976297190732362
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "researchtrack_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "count": 0
+      },
+      "thresholds": {
+        "count==0": {
+          "ok": true
+        }
+      }
+    },
+    "http_reqs": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 383,
+        "rate": 7.6146091202524735
+      }
+    }
+  }
+}

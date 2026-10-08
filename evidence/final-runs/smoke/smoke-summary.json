@@ -1,0 +1,1192 @@
+{
+  "schemaVersion": 3,
+  "overview": {
+    "generatedAtUtc": "2026-10-07T15:29:02.803Z",
+    "profile": "smoke",
+    "purpose": "Fast authenticated deployment-health and latency check",
+    "workload": "2 looping VUs for 45 seconds",
+    "targetP95Ms": 3000,
+    "targetP95Source": "GitHub/runtime variable",
+    "targetP95SourceKey": "K6_SMOKE_P95_MS",
+    "maxFailureRate": 0.01,
+    "baseUrl": "https://api.researchtrack.blipzo.xyz",
+    "projectId": "09a2eff6-2dde-4ce1-abfb-80dec08ad7f3",
+    "includeIntegrations": true,
+    "gatewayBypassEnabled": true,
+    "warmupPasses": 1,
+    "executionMode": "manual",
+    "sourceRunId": "37643383515",
+    "sourceRunAttempt": "1",
+    "sourceSha": "54dcbae67793a2103b6ef78502401bf4ab04b336",
+    "sourceWorkflow": "Azure Production - k6 Performance (VPS)",
+    "testRunDurationMs": 56081.781033,
+    "passed": true,
+    "businessRequests": 55,
+    "businessThroughput": 0.9807106512476227,
+    "businessFailureRate": 0,
+    "p50": 280.512839,
+    "p90": 1902.8897578000003,
+    "p95": 2357.5762171999995,
+    "p99": 4094.714466240001,
+    "avg": 608.5916482363634,
+    "min": 207.61121,
+    "max": 4673.989284,
+    "http429": 0,
+    "http2xx": 55,
+    "http3xx": 0,
+    "http4xx": 0,
+    "http5xx": 0,
+    "networkErrors": 0,
+    "checksRate": 1,
+    "iterations": 55,
+    "droppedIterations": 0,
+    "maxVUs": 2,
+    "dataReceivedBytes": 18512177,
+    "dataSentBytes": 30889,
+    "endpointCount": 8
+  },
+  "thresholdConfiguration": {
+    "overallP95Ms": 3000,
+    "overallSource": "GitHub/runtime variable",
+    "overallSourceKey": "K6_SMOKE_P95_MS",
+    "endpointP95": {},
+    "correctness": {
+        "maxFailureRate": 0.01,
+        "minimumCheckRateExclusive": 0.99,
+        "maxHttp429": 0
+      }
+  },
+  "thresholds": [
+    {
+      "metric": "researchtrack_business_duration",
+      "rule": "p(95)<3000",
+      "passed": true
+    },
+    {
+      "metric": "researchtrack_http_429",
+      "rule": "count==0",
+      "passed": true
+    },
+    {
+      "metric": "checks",
+      "rule": "rate>0.99",
+      "passed": true
+    },
+    {
+      "metric": "researchtrack_business_failures",
+      "rule": "rate<0.01",
+      "passed": true
+    }
+  ],
+  "endpoints": [
+    {
+      "operation": "jira_issues",
+      "label": "Jira issues",
+      "category": "Jira",
+      "method": "GET",
+      "requests": 8,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 2582.922954125,
+      "min": 1587.188097,
+      "p50": 2294.514859,
+      "p90": 3923.0774831999997,
+      "p95": 4298.533383599999,
+      "p99": 4598.89810392,
+      "max": 4673.989284,
+      "http2xx": 8,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    },
+    {
+      "operation": "github_activity",
+      "label": "GitHub activity",
+      "category": "GitHub",
+      "method": "GET",
+      "requests": 7,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 306.56937642857145,
+      "min": 254.365663,
+      "p50": 301.050062,
+      "p90": 372.51281700000004,
+      "p95": 389.4732285,
+      "p99": 403.0415577,
+      "max": 406.43364,
+      "http2xx": 7,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    },
+    {
+      "operation": "requirements",
+      "label": "Submission requirements",
+      "category": "Submission",
+      "method": "GET",
+      "requests": 8,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 291.21786,
+      "min": 236.924367,
+      "p50": 303.999354,
+      "p90": 324.570654,
+      "p95": 341.2343955,
+      "p99": 354.5653887,
+      "max": 357.898137,
+      "http2xx": 8,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    },
+    {
+      "operation": "project_details",
+      "label": "Project details",
+      "category": "Project",
+      "method": "GET",
+      "requests": 7,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 263.01615499999997,
+      "min": 213.506645,
+      "p50": 275.646653,
+      "p90": 320.6541448,
+      "p95": 321.6014344,
+      "p99": 322.35926608,
+      "max": 322.548724,
+      "http2xx": 7,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    },
+    {
+      "operation": "submissions",
+      "label": "Submission history",
+      "category": "Submission",
+      "method": "GET",
+      "requests": 8,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 287.26943900000003,
+      "min": 259.370903,
+      "p50": 291.693628,
+      "p90": 308.7404899,
+      "p95": 318.89292345,
+      "p99": 327.01487029000003,
+      "max": 329.045357,
+      "http2xx": 8,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    },
+    {
+      "operation": "jira_sprint_progress",
+      "label": "Jira sprint progress",
+      "category": "Jira",
+      "method": "GET",
+      "requests": 7,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 269.24032500000004,
+      "min": 224.517619,
+      "p50": 279.841135,
+      "p90": 297.76976080000003,
+      "p95": 307.6120504,
+      "p99": 315.48588208,
+      "max": 317.45434,
+      "http2xx": 7,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    },
+    {
+      "operation": "projects",
+      "label": "List projects",
+      "category": "Project",
+      "method": "GET",
+      "requests": 7,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 240.42115628571426,
+      "min": 207.61121,
+      "p50": 251.013851,
+      "p90": 270.49083199999995,
+      "p95": 275.50183549999997,
+      "p99": 279.5106383,
+      "max": 280.512839,
+      "http2xx": 7,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    },
+    {
+      "operation": "supervisor_dashboard",
+      "label": "Supervisor dashboard",
+      "category": "Dashboard",
+      "method": "GET",
+      "requests": 3,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 208.84317966666666,
+      "min": 207.887329,
+      "p50": 209.025345,
+      "p90": 209.498561,
+      "p95": 209.55771299999998,
+      "p99": 209.60503459999998,
+      "max": 209.616865,
+      "http2xx": 3,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    }
+  ],
+  "rawMetrics": {
+    "researchtrack_op_project_details_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_jira_sprint_progress_duration": {
+      "values": {
+        "avg": 269.24032500000004,
+        "min": 224.517619,
+        "med": 279.841135,
+        "p(90)": 297.76976080000003,
+        "p(95)": 307.6120504,
+        "p(99)": 315.48588208,
+        "max": 317.45434
+      },
+      "type": "trend",
+      "contains": "time"
+    },
+    "researchtrack_op_requirements_http_4xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_project_details_http_4xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_github_activity_http_4xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    "researchtrack_op_submissions_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_project_details_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 7,
+        "rate": 0.12481771924969742
+      }
+    },
+    "researchtrack_op_supervisor_dashboard_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_supervisor_dashboard_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(99)": 209.60503459999998,
+        "max": 209.616865,
+        "avg": 208.84317966666666,
+        "min": 207.887329,
+        "med": 209.025345,
+        "p(90)": 209.498561,
+        "p(95)": 209.55771299999998
+      }
+    },
+    "http_req_sending": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(99)": 40.157037670000115,
+        "max": 53.035176,
+        "avg": 1.8901026805555565,
+        "min": 0.039714,
+        "med": 0.197347,
+        "p(90)": 1.8704667999999987,
+        "p(95)": 5.243261350000012
+      }
+    },
+    "researchtrack_op_jira_sprint_progress_http_3xx": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    },
+    "researchtrack_op_jira_issues_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 8,
+        "rate": 0.1426488219996542
+      }
+    },
+    "researchtrack_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "thresholds": {
+        "count==0": {
+          "ok": true
+        }
+      }
+    },
+    "researchtrack_op_github_activity_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 7
+      }
+    },
+    "http_req_failed": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "passes": 0,
+        "fails": 72,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_project_details_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 263.01615499999997,
+        "min": 213.506645,
+        "med": 275.646653,
+        "p(90)": 320.6541448,
+        "p(95)": 321.6014344,
+        "p(99)": 322.35926608,
+        "max": 322.548724
+      }
+    },
+    "researchtrack_op_projects_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 7,
+        "rate": 0.12481771924969742
+      }
+    },
+    "researchtrack_op_projects_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "max": 280.512839,
+        "avg": 240.42115628571426,
+        "min": 207.61121,
+        "med": 251.013851,
+        "p(90)": 270.49083199999995,
+        "p(95)": 275.50183549999997,
+        "p(99)": 279.5106383
+      }
+    },
+    "iteration_duration": {
+      "values": {
+        "p(99)": 5284.2707236800015,
+        "max": 6024.271311,
+        "avg": 1651.1432433636357,
+        "min": 1210.44521,
+        "med": 1301.759853,
+        "p(90)": 2977.613298800001,
+        "p(95)": 3418.4969066999993
+      },
+      "type": "trend",
+      "contains": "time"
+    },
+    "researchtrack_op_project_details_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0.12481771924969742,
+        "count": 7
+      }
+    },
+    "researchtrack_op_project_details_network_errors": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_jira_sprint_progress_network_errors": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_github_activity_http_3xx": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    },
+    "data_received": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "count": 18512177,
+        "rate": 330092.53021238657
+      }
+    },
+    "researchtrack_op_jira_sprint_progress_http_429": {
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "researchtrack_op_github_activity_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 7,
+        "rate": 0.12481771924969742
+      }
+    },
+    "researchtrack_op_supervisor_dashboard_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 3,
+        "rate": 0.05349330824987033
+      }
+    },
+    "researchtrack_business_http_4xx": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    },
+    "researchtrack_op_submissions_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "passes": 0,
+        "fails": 8,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_requirements_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 8,
+        "rate": 0.1426488219996542
+      }
+    },
+    "researchtrack_op_jira_sprint_progress_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 7,
+        "rate": 0.12481771924969742
+      }
+    },
+    "researchtrack_op_supervisor_dashboard_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_projects_http_4xx": {
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "researchtrack_op_project_details_http_3xx": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    },
+    "http_req_connecting": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "med": 0,
+        "p(90)": 0,
+        "p(95)": 0,
+        "p(99)": 206.58592435000025,
+        "max": 235.851354,
+        "avg": 8.643311486111111,
+        "min": 0
+      }
+    },
+    "researchtrack_business_network_errors": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_business_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "http_req_tls_handshaking": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(90)": 0,
+        "p(95)": 0,
+        "p(99)": 390.4099749600014,
+        "max": 550.013377,
+        "avg": 16.016034,
+        "min": 0,
+        "med": 0
+      }
+    },
+    "researchtrack_op_requirements_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_jira_sprint_progress_http_4xx": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    },
+    "researchtrack_op_github_activity_duration": {
+      "values": {
+        "avg": 306.56937642857145,
+        "min": 254.365663,
+        "med": 301.050062,
+        "p(90)": 372.51281700000004,
+        "p(95)": 389.4732285,
+        "p(99)": 403.0415577,
+        "max": 406.43364
+      },
+      "type": "trend",
+      "contains": "time"
+    },
+    "http_req_blocked": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 26.640664083333334,
+        "min": 0.000321,
+        "med": 0.00043599999999999997,
+        "p(90)": 0.00067,
+        "p(95)": 0.0009904500000000006,
+        "p(99)": 625.8422362700023,
+        "max": 883.261372
+      }
+    },
+    "researchtrack_op_project_details_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 7
+      }
+    },
+    "checks": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 1,
+        "passes": 55,
+        "fails": 0
+      },
+      "thresholds": {
+        "rate>0.99": {
+          "ok": true
+        }
+      }
+    },
+    "researchtrack_op_project_details_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_supervisor_dashboard_http_4xx": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    },
+    "vus_max": {
+      "type": "gauge",
+      "contains": "default",
+      "values": {
+        "value": 2,
+        "min": 2,
+        "max": 2
+      }
+    },
+    "researchtrack_op_projects_http_3xx": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    },
+    "researchtrack_op_jira_issues_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 8,
+        "rate": 0.1426488219996542
+      }
+    },
+    "researchtrack_op_submissions_duration": {
+      "values": {
+        "avg": 287.26943900000003,
+        "min": 259.370903,
+        "med": 291.693628,
+        "p(90)": 308.7404899,
+        "p(95)": 318.89292345,
+        "p(99)": 327.01487029000003,
+        "max": 329.045357
+      },
+      "type": "trend",
+      "contains": "time"
+    },
+    "researchtrack_op_submissions_requests": {
+      "contains": "default",
+      "values": {
+        "count": 8,
+        "rate": 0.1426488219996542
+      },
+      "type": "counter"
+    },
+    "http_req_waiting": {
+      "values": {
+        "min": 207.232255,
+        "med": 263.3456425,
+        "p(90)": 324.9193671,
+        "p(95)": 360.5626533000001,
+        "p(99)": 639.4527372300005,
+        "max": 694.449257,
+        "avg": 279.2992878194445
+      },
+      "type": "trend",
+      "contains": "time"
+    },
+    "data_sent": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "count": 30889,
+        "rate": 550.7849328434148
+      }
+    },
+    "researchtrack_op_jira_issues_duration": {
+      "values": {
+        "min": 1587.188097,
+        "med": 2294.514859,
+        "p(90)": 3923.0774831999997,
+        "p(95)": 4298.533383599999,
+        "p(99)": 4598.89810392,
+        "max": 4673.989284,
+        "avg": 2582.922954125
+      },
+      "type": "trend",
+      "contains": "time"
+    },
+    "researchtrack_op_github_activity_network_errors": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    },
+    "researchtrack_op_projects_network_errors": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_supervisor_dashboard_network_errors": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "vus": {
+      "values": {
+        "value": 1,
+        "min": 0,
+        "max": 2
+      },
+      "type": "gauge",
+      "contains": "default"
+    },
+    "researchtrack_op_projects_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 7,
+        "rate": 0.12481771924969742
+      }
+    },
+    "researchtrack_business_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0.9807106512476227,
+        "count": 55
+      }
+    },
+    "researchtrack_op_supervisor_dashboard_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "passes": 0,
+        "fails": 3,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_jira_issues_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_jira_sprint_progress_http_2xx": {
+      "contains": "default",
+      "values": {
+        "count": 7,
+        "rate": 0.12481771924969742
+      },
+      "type": "counter"
+    },
+    "researchtrack_op_requirements_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_submissions_network_errors": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "http_req_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "max": 4673.989284,
+        "avg": 596.2644433611113,
+        "min": 207.61121,
+        "med": 280.176987,
+        "p(90)": 1670.3881958999998,
+        "p(95)": 2384.5064663000003,
+        "p(99)": 3912.3501717600066
+      }
+    },
+    "researchtrack_op_supervisor_dashboard_http_2xx": {
+      "contains": "default",
+      "values": {
+        "rate": 0.05349330824987033,
+        "count": 3
+      },
+      "type": "counter"
+    },
+    "researchtrack_op_requirements_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(99)": 354.5653887,
+        "max": 357.898137,
+        "avg": 291.21786,
+        "min": 236.924367,
+        "med": 303.999354,
+        "p(90)": 324.570654,
+        "p(95)": 341.2343955
+      }
+    },
+    "researchtrack_op_requirements_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 8
+      }
+    },
+    "researchtrack_op_jira_issues_http_4xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_github_activity_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_supervisor_dashboard_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    "researchtrack_op_requirements_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "iterations": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 55,
+        "rate": 0.9807106512476227
+      }
+    },
+    "researchtrack_op_jira_sprint_progress_failures": {
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 7
+      },
+      "type": "rate"
+    },
+    "researchtrack_business_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 55
+      },
+      "thresholds": {
+        "rate<0.01": {
+          "ok": true
+        }
+      }
+    },
+    "researchtrack_op_github_activity_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 7,
+        "rate": 0.12481771924969742
+      }
+    },
+    "http_req_duration{expected_response:true}": {
+      "contains": "time",
+      "values": {
+        "p(90)": 1670.3881958999998,
+        "p(95)": 2384.5064663000003,
+        "p(99)": 3912.3501717600066,
+        "max": 4673.989284,
+        "avg": 596.2644433611113,
+        "min": 207.61121,
+        "med": 280.176987
+      },
+      "type": "trend"
+    },
+    "researchtrack_op_projects_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    "researchtrack_op_requirements_network_errors": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    "researchtrack_op_jira_sprint_progress_http_5xx": {
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "researchtrack_op_submissions_http_4xx": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    },
+    "http_req_receiving": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(99)": 3656.2837737500067,
+        "max": 4411.842397,
+        "avg": 315.0750528611111,
+        "min": 0.108231,
+        "med": 0.228095,
+        "p(90)": 1432.6568067,
+        "p(95)": 2099.5188636500006
+      }
+    },
+    "researchtrack_business_duration": {
+      "thresholds": {
+        "p(95)<3000": {
+          "ok": true
+        }
+      },
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(90)": 1902.8897578000003,
+        "p(95)": 2357.5762171999995,
+        "p(99)": 4094.714466240001,
+        "max": 4673.989284,
+        "avg": 608.5916482363634,
+        "min": 207.61121,
+        "med": 280.512839
+      }
+    },
+    "researchtrack_op_jira_issues_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_submissions_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_submissions_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_submissions_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0.1426488219996542,
+        "count": 8
+      }
+    },
+    "researchtrack_op_projects_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "fails": 7,
+        "rate": 0,
+        "passes": 0
+      }
+    },
+    "researchtrack_op_jira_issues_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "passes": 0,
+        "fails": 8,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_jira_issues_http_429": {
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "researchtrack_op_projects_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_business_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 55,
+        "rate": 0.9807106512476227
+      }
+    },
+    "researchtrack_op_requirements_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 8,
+        "rate": 0.1426488219996542
+      }
+    },
+    "researchtrack_business_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "http_reqs": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 72,
+        "rate": 1.2838393979968878
+      }
+    },
+    "researchtrack_op_github_activity_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_jira_issues_network_errors": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    }
+  }
+}

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ResearchTrack k6 stress report</title>
+<style>
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#1f2937;background:#f8fafc}body{margin:0;padding:32px}.wrap{max-width:1320px;margin:auto}.hero,.card{background:white;border:1px solid #e5e7eb;border-radius:14px;padding:22px;margin:0 0 18px;box-shadow:0 1px 2px rgba(0,0,0,.04)}h1{margin:0 0 8px;font-size:30px}h2{font-size:19px;margin:0 0 14px}.muted{color:#64748b}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.metric{border:1px solid #e5e7eb;border-radius:10px;padding:14px}.metric b{display:block;font-size:22px;margin-top:4px}.pill{display:inline-block;padding:5px 10px;border-radius:999px;font-weight:700;font-size:12px}.pass{background:#dcfce7;color:#166534}.fail{background:#fee2e2;color:#991b1b}.neutral{background:#e2e8f0;color:#475569}.warn{background:#fff7ed;color:#9a3412;font-weight:700}table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:9px 10px;border-bottom:1px solid #e5e7eb;text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}th{background:#f8fafc;position:sticky;top:0}.table{overflow:auto}.bad{background:#fff7f7}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}.footer{font-size:12px;color:#64748b;line-height:1.6}@media print{body{padding:0;background:white}.hero,.card{box-shadow:none;break-inside:avoid}th{position:static}}
+</style></head><body><div class="wrap">
+<section class="hero"><span class="pill pass">PASS</span><h1>ResearchTrack k6 — stress</h1><p class="muted">Increasing demand to expose saturation and latency degradation · 2026-10-07T15:47:43.159Z</p><p><strong>Workload:</strong> Ramping arrival rate 5→10→25→40 req/s, then cooldown (135 seconds)<br><strong>Target:</strong> https://api.researchtrack.blipzo.xyz · <strong>Project:</strong> 09a2eff6-2dde-4ce1-abfb-80dec08ad7f3<br><strong>Execution:</strong> manual · <strong>Warm-up:</strong> 1 pass(es) · <strong>Integrations:</strong> true · <strong>Gateway exemption:</strong> true</p></section>
+<section class="card"><h2>Executive metrics</h2><div class="grid">
+<div class="metric">Business requests<b>2774</b></div>
+<div class="metric">Throughput<b>19.40 req/s</b></div>
+<div class="metric">Failure rate<b>0.00%</b></div>
+<div class="metric">p50<b>270.1 ms</b></div>
+<div class="metric">p90<b>1927.8 ms</b></div>
+<div class="metric ">p95 / target<b>2468.1 ms / 3500 ms</b></div>
+<div class="metric">p99<b>3784.1 ms</b></div>
+<div class="metric">HTTP 429<b>0</b></div>
+</div></section>
+<section class="card"><h2>Runtime threshold configuration</h2><p><strong>Overall stress p95:</strong> 3500 ms · source: GitHub/runtime variable (K6_STRESS_P95_MS)</p><p><strong>Correctness gates:</strong> failure rate &lt; 5.00%, checks &gt; 99%, HTTP 429 = 0.</p><p class="muted">No endpoint-specific p95 gates configured for operations measured in this run.</p></section>
+<section class="card"><h2>Endpoint performance</h2><div class="table"><table><thead><tr><th>Operation</th><th>Method</th><th>Req</th><th>Fail</th><th>Avg</th><th>p50</th><th>p90</th><th>p95</th><th>p99</th><th>Max</th><th>Target p95</th><th>Gate</th><th>4xx</th><th>5xx</th><th>429</th></tr></thead><tbody>
+    <tr class="">
+      <td><strong>Jira issues</strong><br><small>Jira</small></td>
+      <td>GET</td><td>373</td><td>0.00%</td>
+      <td>2556.0</td><td>2251.0</td><td>3381.9</td>
+      <td class="">4406.9</td>
+      <td>9250.6</td><td>15219.5</td>
+      <td>—</td><td><span class="pill neutral">Not gated</span></td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr>
+    <tr class="">
+      <td><strong>Jira sprint progress</strong><br><small>Jira</small></td>
+      <td>GET</td><td>366</td><td>0.00%</td>
+      <td>294.3</td><td>279.9</td><td>390.5</td>
+      <td class="">452.1</td>
+      <td>629.9</td><td>716.4</td>
+      <td>—</td><td><span class="pill neutral">Not gated</span></td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr>
+    <tr class="">
+      <td><strong>GitHub activity</strong><br><small>GitHub</small></td>
+      <td>GET</td><td>369</td><td>0.00%</td>
+      <td>285.5</td><td>277.7</td><td>321.5</td>
+      <td class="">376.4</td>
+      <td>482.8</td><td>653.1</td>
+      <td>—</td><td><span class="pill neutral">Not gated</span></td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr>
+    <tr class="">
+      <td><strong>Submission requirements</strong><br><small>Submission</small></td>
+      <td>GET</td><td>373</td><td>0.00%</td>
+      <td>285.9</td><td>277.9</td><td>314.7</td>
+      <td class="">365.1</td>
+      <td>633.8</td><td>764.0</td>
+      <td>—</td><td><span class="pill neutral">Not gated</span></td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr>
+    <tr class="">
+      <td><strong>Submission history</strong><br><small>Submission</small></td>
+      <td>GET</td><td>372</td><td>0.00%</td>
+      <td>291.4</td><td>278.0</td><td>324.0</td>
+      <td class="">347.4</td>
+      <td>510.7</td><td>1856.1</td>
+      <td>—</td><td><span class="pill neutral">Not gated</span></td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr>
+    <tr class="">
+      <td><strong>Project details</strong><br><small>Project</small></td>
+      <td>GET</td><td>373</td><td>0.00%</td>
+      <td>254.6</td><td>248.5</td><td>292.2</td>
+      <td class="">310.4</td>
+      <td>382.1</td><td>596.0</td>
+      <td>—</td><td><span class="pill neutral">Not gated</span></td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr>
+    <tr class="">
+      <td><strong>List projects</strong><br><small>Project</small></td>
+      <td>GET</td><td>373</td><td>0.00%</td>
+      <td>243.7</td><td>241.0</td><td>278.6</td>
+      <td class="">308.7</td>
+      <td>409.5</td><td>556.9</td>
+      <td>—</td><td><span class="pill neutral">Not gated</span></td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr>
+    <tr class="">
+      <td><strong>Supervisor dashboard</strong><br><small>Dashboard</small></td>
+      <td>GET</td><td>175</td><td>0.00%</td>
+      <td>246.9</td><td>243.2</td><td>280.9</td>
+      <td class="">306.9</td>
+      <td>511.3</td><td>620.6</td>
+      <td>—</td><td><span class="pill neutral">Not gated</span></td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr></tbody></table></div><p class="muted">Latency columns are milliseconds. Endpoint gates appear only when configured through the runtime endpoint threshold map.</p></section>
+<section class="card"><h2>Jira issues diagnostic</h2><p><strong>373 measured request(s)</strong> · p50 2251.0 ms · p90 3381.9 ms · p95 4406.9 ms · p99 9250.6 ms · endpoint gate <strong>Not gated</strong> (not yet configured).</p></section>
+<section class="card"><h2>Slowest endpoints by p95</h2><ol><li><strong>Jira issues</strong>: p95 4406.9 ms · p99 9250.6 ms · failure 0.00%</li><li><strong>Jira sprint progress</strong>: p95 452.1 ms · p99 629.9 ms · failure 0.00%</li><li><strong>GitHub activity</strong>: p95 376.4 ms · p99 482.8 ms · failure 0.00%</li><li><strong>Submission requirements</strong>: p95 365.1 ms · p99 633.8 ms · failure 0.00%</li><li><strong>Submission history</strong>: p95 347.4 ms · p99 510.7 ms · failure 0.00%</li></ol></section>
+<section class="card"><h2>HTTP outcomes</h2><div class="grid"><div class="metric">2xx<b>2774</b></div><div class="metric">3xx<b>0</b></div><div class="metric">4xx<b>0</b></div><div class="metric">5xx<b>0</b></div><div class="metric">Network errors<b>0</b></div><div class="metric">Dropped iterations<b>0</b></div></div></section>
+<section class="card"><h2>Threshold evaluation</h2><div class="table"><table><thead><tr><th>Metric</th><th>Rule</th><th>Result</th></tr></thead><tbody><tr><td><code>researchtrack_business_duration</code></td><td><code>p(95)&lt;3500</code></td><td><span class="pill pass">PASS</span></td></tr><tr><td><code>researchtrack_http_429</code></td><td><code>count==0</code></td><td><span class="pill pass">PASS</span></td></tr><tr><td><code>researchtrack_business_failures</code></td><td><code>rate&lt;0.05</code></td><td><span class="pill pass">PASS</span></td></tr><tr><td><code>checks</code></td><td><code>rate&gt;0.99</code></td><td><span class="pill pass">PASS</span></td></tr></tbody></table></div></section>
+<section class="card footer"><h2>Methodology notes</h2><p>Business metrics exclude authentication and warm-up traffic. Profile p95 thresholds come from runtime GitHub variables when configured, otherwise the documented fallback is used. Optional endpoint-specific p95 gates come from <code>K6_ENDPOINT_P95_THRESHOLDS_JSON</code>, allowing Jira Issues to have a justified target without weakening fast core routes.</p><p>Threshold failures remain valid evidence: reports are written before k6 exits non-zero, and the Azure/Gateway restoration path still runs.</p><p>GitHub workflow: Azure Production - k6 Performance (VPS) · run 37643438215 · attempt 1 · source SHA 54dcbae67793a2103b6ef78502401bf4ab04b336.</p></section>
+</div></body></html>

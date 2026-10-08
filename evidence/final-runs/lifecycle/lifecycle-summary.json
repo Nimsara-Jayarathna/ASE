@@ -1,0 +1,1501 @@
+{
+  "schemaVersion": 3,
+  "overview": {
+    "generatedAtUtc": "2026-10-07T16:11:27.739Z",
+    "profile": "lifecycle",
+    "purpose": "Full student/supervisor submission version lifecycle",
+    "workload": "1 VU × 1 complete lifecycle, max 3 minutes",
+    "targetP95Ms": 1500,
+    "targetP95Source": "GitHub/runtime variable",
+    "targetP95SourceKey": "K6_LIFECYCLE_P95_MS",
+    "maxFailureRate": 0.01,
+    "baseUrl": "https://api.researchtrack.blipzo.xyz",
+    "projectId": "09a2eff6-2dde-4ce1-abfb-80dec08ad7f3",
+    "includeIntegrations": true,
+    "gatewayBypassEnabled": true,
+    "warmupPasses": 1,
+    "executionMode": "manual",
+    "sourceRunId": "37643554102",
+    "sourceRunAttempt": "1",
+    "sourceSha": "54dcbae67793a2103b6ef78502401bf4ab04b336",
+    "sourceWorkflow": "Azure Production - k6 Performance (VPS)",
+    "testRunDurationMs": 7907.554001,
+    "passed": true,
+    "businessRequests": 11,
+    "businessThroughput": 1.391074913760807,
+    "businessFailureRate": 0,
+    "p50": 370.887943,
+    "p90": 711.78624,
+    "p95": 788.239842,
+    "p99": 849.4027236000001,
+    "avg": 486.35497736363635,
+    "min": 195.324142,
+    "max": 864.693444,
+    "http429": 0,
+    "http2xx": 11,
+    "http3xx": 0,
+    "http4xx": 0,
+    "http5xx": 0,
+    "networkErrors": 0,
+    "checksRate": 1,
+    "iterations": 1,
+    "droppedIterations": 0,
+    "maxVUs": 1,
+    "dataReceivedBytes": 37577,
+    "dataSentBytes": 10100,
+    "endpointCount": 11
+  },
+  "thresholdConfiguration": {
+    "overallP95Ms": 1500,
+    "overallSource": "GitHub/runtime variable",
+    "overallSourceKey": "K6_LIFECYCLE_P95_MS",
+    "endpointP95": {},
+    "correctness": {
+        "maxFailureRate": 0.01,
+        "minimumCheckRateExclusive": 0.99,
+        "maxHttp429": 0
+      }
+  },
+  "thresholds": [
+    {
+      "metric": "checks",
+      "rule": "rate>0.99",
+      "passed": true
+    },
+    {
+      "metric": "researchtrack_http_429",
+      "rule": "count==0",
+      "passed": true
+    },
+    {
+      "metric": "researchtrack_business_failures",
+      "rule": "rate<0.01",
+      "passed": true
+    },
+    {
+      "metric": "researchtrack_business_duration",
+      "rule": "p(95)<1500",
+      "passed": true
+    }
+  ],
+  "endpoints": [
+    {
+      "operation": "v1_complete",
+      "label": "Complete v1 upload",
+      "category": "Lifecycle",
+      "method": "POST",
+      "requests": 1,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 864.693444,
+      "min": 864.693444,
+      "p50": 864.693444,
+      "p90": 864.693444,
+      "p95": 864.693444,
+      "p99": 864.693444,
+      "max": 864.693444,
+      "http2xx": 1,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    },
+    {
+      "operation": "review_request_changes",
+      "label": "Request submission changes",
+      "category": "Lifecycle",
+      "method": "POST",
+      "requests": 1,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 711.78624,
+      "min": 711.78624,
+      "p50": 711.78624,
+      "p90": 711.78624,
+      "p95": 711.78624,
+      "p99": 711.78624,
+      "max": 711.78624,
+      "http2xx": 1,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    },
+    {
+      "operation": "requirement_create",
+      "label": "Create submission requirement",
+      "category": "Submission write",
+      "method": "POST",
+      "requests": 1,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 696.586046,
+      "min": 696.586046,
+      "p50": 696.586046,
+      "p90": 696.586046,
+      "p95": 696.586046,
+      "p99": 696.586046,
+      "max": 696.586046,
+      "http2xx": 1,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    },
+    {
+      "operation": "v2_complete",
+      "label": "Complete v2 upload",
+      "category": "Lifecycle",
+      "method": "POST",
+      "requests": 1,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 659.523939,
+      "min": 659.523939,
+      "p50": 659.523939,
+      "p90": 659.523939,
+      "p95": 659.523939,
+      "p99": 659.523939,
+      "max": 659.523939,
+      "http2xx": 1,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    },
+    {
+      "operation": "review_approve",
+      "label": "Approve submission",
+      "category": "Lifecycle",
+      "method": "POST",
+      "requests": 1,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 650.823216,
+      "min": 650.823216,
+      "p50": 650.823216,
+      "p90": 650.823216,
+      "p95": 650.823216,
+      "p99": 650.823216,
+      "max": 650.823216,
+      "http2xx": 1,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    },
+    {
+      "operation": "v1_session",
+      "label": "Create v1 upload session",
+      "category": "Lifecycle",
+      "method": "POST",
+      "requests": 1,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 370.887943,
+      "min": 370.887943,
+      "p50": 370.887943,
+      "p90": 370.887943,
+      "p95": 370.887943,
+      "p99": 370.887943,
+      "max": 370.887943,
+      "http2xx": 1,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    },
+    {
+      "operation": "v2_session",
+      "label": "Create v2 upload session",
+      "category": "Lifecycle",
+      "method": "POST",
+      "requests": 1,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 347.590319,
+      "min": 347.590319,
+      "p50": 347.590319,
+      "p90": 347.590319,
+      "p95": 347.590319,
+      "p99": 347.590319,
+      "max": 347.590319,
+      "http2xx": 1,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    },
+    {
+      "operation": "archive_test_requirement",
+      "label": "Archive test requirement",
+      "category": "Lifecycle",
+      "method": "POST",
+      "requests": 1,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 331.722002,
+      "min": 331.722002,
+      "p50": 331.722002,
+      "p90": 331.722002,
+      "p95": 331.722002,
+      "p99": 331.722002,
+      "max": 331.722002,
+      "http2xx": 1,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    },
+    {
+      "operation": "verify_version_history",
+      "label": "Verify version history",
+      "category": "Lifecycle",
+      "method": "GET",
+      "requests": 1,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 320.061591,
+      "min": 320.061591,
+      "p50": 320.061591,
+      "p90": 320.061591,
+      "p95": 320.061591,
+      "p99": 320.061591,
+      "max": 320.061591,
+      "http2xx": 1,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    },
+    {
+      "operation": "v1_object_storage",
+      "label": "Upload v1 object",
+      "category": "Object storage",
+      "method": "PUT",
+      "requests": 1,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 200.905869,
+      "min": 200.905869,
+      "p50": 200.905869,
+      "p90": 200.905869,
+      "p95": 200.905869,
+      "p99": 200.905869,
+      "max": 200.905869,
+      "http2xx": 1,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    },
+    {
+      "operation": "v2_object_storage",
+      "label": "Upload v2 object",
+      "category": "Object storage",
+      "method": "PUT",
+      "requests": 1,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 195.324142,
+      "min": 195.324142,
+      "p50": 195.324142,
+      "p90": 195.324142,
+      "p95": 195.324142,
+      "p99": 195.324142,
+      "max": 195.324142,
+      "http2xx": 1,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    }
+  ],
+  "rawMetrics": {
+    "researchtrack_business_network_errors": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    },
+    "researchtrack_op_v2_complete_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_review_approve_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 650.823216,
+        "min": 650.823216,
+        "med": 650.823216,
+        "p(90)": 650.823216,
+        "p(95)": 650.823216,
+        "p(99)": 650.823216,
+        "max": 650.823216
+      }
+    },
+    "checks": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 1,
+        "passes": 13,
+        "fails": 0
+      },
+      "thresholds": {
+        "rate>0.99": {
+          "ok": true
+        }
+      }
+    },
+    "researchtrack_op_v2_complete_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 659.523939,
+        "min": 659.523939,
+        "med": 659.523939,
+        "p(90)": 659.523939,
+        "p(95)": 659.523939,
+        "p(99)": 659.523939,
+        "max": 659.523939
+      }
+    },
+    "researchtrack_op_v2_complete_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "http_req_waiting": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 483.5302106153846,
+        "min": 194.897921,
+        "med": 370.091412,
+        "p(90)": 707.0473912,
+        "p(95)": 770.6856547999998,
+        "p(99)": 842.7485093599998,
+        "max": 860.764223
+      }
+    },
+    "researchtrack_op_v2_object_storage_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_archive_test_requirement_http_4xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v1_object_storage_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v2_object_storage_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1,
+        "rate": 0.126461355796437
+      }
+    },
+    "researchtrack_op_v1_complete_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v1_session_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v1_object_storage_http_4xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v1_session_http_4xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v2_session_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1,
+        "rate": 0.126461355796437
+      }
+    },
+    "researchtrack_op_review_request_changes_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(99)": 711.78624,
+        "max": 711.78624,
+        "avg": 711.78624,
+        "min": 711.78624,
+        "med": 711.78624,
+        "p(90)": 711.78624,
+        "p(95)": 711.78624
+      }
+    },
+    "researchtrack_op_verify_version_history_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1,
+        "rate": 0.126461355796437
+      }
+    },
+    "researchtrack_business_http_3xx": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    },
+    "researchtrack_op_v1_complete_network_errors": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    },
+    "researchtrack_op_v1_complete_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "http_req_connecting": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "min": 0,
+        "med": 0,
+        "p(90)": 183.55609040000002,
+        "p(95)": 212.9198793999999,
+        "p(99)": 244.67510067999993,
+        "max": 252.613906,
+        "avg": 47.00175176923077
+      }
+    },
+    "http_req_duration{expected_response:true}": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "med": 370.887943,
+        "p(90)": 708.7462012000001,
+        "p(95)": 772.9491215999998,
+        "p(99)": 846.3445795199998,
+        "max": 864.693444,
+        "avg": 485.4841239230769,
+        "min": 195.324142
+      }
+    },
+    "researchtrack_http_429": {
+      "thresholds": {
+        "count==0": {
+          "ok": true
+        }
+      },
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_review_approve_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1,
+        "rate": 0.126461355796437
+      }
+    },
+    "http_req_blocked": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(90)": 435.00988240000004,
+        "p(95)": 511.4870089999997,
+        "p(99)": 598.0965025999998,
+        "max": 619.748876,
+        "avg": 113.60806200000002,
+        "min": 0.00037,
+        "med": 0.000531
+      }
+    },
+    "researchtrack_op_v1_complete_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1,
+        "rate": 0.126461355796437
+      }
+    },
+    "researchtrack_op_v1_object_storage_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v1_complete_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "med": 864.693444,
+        "p(90)": 864.693444,
+        "p(95)": 864.693444,
+        "p(99)": 864.693444,
+        "max": 864.693444,
+        "avg": 864.693444,
+        "min": 864.693444
+      }
+    },
+    "researchtrack_op_requirement_create_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1,
+        "rate": 0.126461355796437
+      }
+    },
+    "researchtrack_op_v2_session_network_errors": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    "researchtrack_op_verify_version_history_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "iterations": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1,
+        "rate": 0.126461355796437
+      }
+    },
+    "researchtrack_op_archive_test_requirement_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 1
+      }
+    },
+    "researchtrack_op_v1_session_http_429": {
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "researchtrack_op_v2_complete_network_errors": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "vus_max": {
+      "type": "gauge",
+      "contains": "default",
+      "values": {
+        "value": 1,
+        "min": 1,
+        "max": 1
+      }
+    },
+    "researchtrack_op_v2_object_storage_failures": {
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 1
+      },
+      "type": "rate",
+      "contains": "default"
+    },
+    "researchtrack_op_review_request_changes_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1,
+        "rate": 0.126461355796437
+      }
+    },
+    "researchtrack_op_review_approve_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "passes": 0,
+        "fails": 1,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v2_complete_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1,
+        "rate": 0.126461355796437
+      }
+    },
+    "researchtrack_op_v2_object_storage_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    "researchtrack_op_review_approve_http_5xx": {
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "researchtrack_op_v1_object_storage_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "min": 200.905869,
+        "med": 200.905869,
+        "p(90)": 200.905869,
+        "p(95)": 200.905869,
+        "p(99)": 200.905869,
+        "max": 200.905869,
+        "avg": 200.905869
+      }
+    },
+    "researchtrack_op_v1_session_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_review_request_changes_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v1_object_storage_network_errors": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    "researchtrack_op_verify_version_history_network_errors": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_review_request_changes_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 1
+      }
+    },
+    "researchtrack_business_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    "researchtrack_op_requirement_create_requests": {
+      "values": {
+        "count": 1,
+        "rate": 0.126461355796437
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "researchtrack_business_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 11,
+        "rate": 1.391074913760807
+      }
+    },
+    "researchtrack_op_v2_complete_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_archive_test_requirement_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(90)": 331.722002,
+        "p(95)": 331.722002,
+        "p(99)": 331.722002,
+        "max": 331.722002,
+        "avg": 331.722002,
+        "min": 331.722002,
+        "med": 331.722002
+      }
+    },
+    "researchtrack_business_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 11
+      },
+      "thresholds": {
+        "rate<0.01": {
+          "ok": true
+        }
+      }
+    },
+    "researchtrack_op_v1_object_storage_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0.126461355796437,
+        "count": 1
+      }
+    },
+    "researchtrack_op_v2_complete_failures": {
+      "contains": "default",
+      "values": {
+        "passes": 0,
+        "fails": 1,
+        "rate": 0
+      },
+      "type": "rate"
+    },
+    "researchtrack_op_v1_complete_http_4xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_archive_test_requirement_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0.126461355796437,
+        "count": 1
+      }
+    },
+    "http_req_receiving": {
+      "values": {
+        "avg": 1.1229013846153846,
+        "min": 0.13664,
+        "med": 0.253195,
+        "p(90)": 2.2941722000000015,
+        "p(95)": 5.24286399999999,
+        "p(99)": 8.268903999999992,
+        "max": 9.025414
+      },
+      "type": "trend",
+      "contains": "time"
+    },
+    "researchtrack_business_duration": {
+      "thresholds": {
+        "p(95)<1500": {
+          "ok": true
+        }
+      },
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "max": 864.693444,
+        "avg": 486.35497736363635,
+        "min": 195.324142,
+        "med": 370.887943,
+        "p(90)": 711.78624,
+        "p(95)": 788.239842,
+        "p(99)": 849.4027236000001
+      }
+    },
+    "researchtrack_op_v2_session_requests": {
+      "contains": "default",
+      "values": {
+        "rate": 0.126461355796437,
+        "count": 1
+      },
+      "type": "counter"
+    },
+    "data_sent": {
+      "values": {
+        "count": 10100,
+        "rate": 1277.2596935440138
+      },
+      "type": "counter",
+      "contains": "data"
+    },
+    "researchtrack_op_archive_test_requirement_network_errors": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    },
+    "researchtrack_op_v2_complete_http_4xx": {
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "researchtrack_op_v2_session_http_4xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v2_session_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_requirement_create_network_errors": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    },
+    "researchtrack_business_http_4xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v1_session_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1,
+        "rate": 0.126461355796437
+      }
+    },
+    "researchtrack_op_v2_complete_requests": {
+      "contains": "default",
+      "values": {
+        "count": 1,
+        "rate": 0.126461355796437
+      },
+      "type": "counter"
+    },
+    "researchtrack_op_v2_session_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(90)": 347.590319,
+        "p(95)": 347.590319,
+        "p(99)": 347.590319,
+        "max": 347.590319,
+        "avg": 347.590319,
+        "min": 347.590319,
+        "med": 347.590319
+      }
+    },
+    "researchtrack_op_review_approve_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1,
+        "rate": 0.126461355796437
+      }
+    },
+    "http_reqs": {
+      "values": {
+        "count": 13,
+        "rate": 1.643997625353681
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "researchtrack_op_v2_object_storage_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0.126461355796437,
+        "count": 1
+      }
+    },
+    "researchtrack_op_v1_complete_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_review_approve_http_4xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v1_session_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 1
+      }
+    },
+    "http_req_sending": {
+      "contains": "time",
+      "values": {
+        "p(99)": 3.61862576,
+        "max": 3.627266,
+        "avg": 0.831011923076923,
+        "min": 0.170884,
+        "med": 0.331037,
+        "p(90)": 3.0174610000000026,
+        "p(95)": 3.5840648
+      },
+      "type": "trend"
+    },
+    "researchtrack_op_requirement_create_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 696.586046,
+        "min": 696.586046,
+        "med": 696.586046,
+        "p(90)": 696.586046,
+        "p(95)": 696.586046,
+        "p(99)": 696.586046,
+        "max": 696.586046
+      }
+    },
+    "researchtrack_op_review_approve_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v1_session_network_errors": {
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "researchtrack_op_verify_version_history_http_4xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v1_object_storage_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_archive_test_requirement_http_5xx": {
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "http_req_failed": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "passes": 0,
+        "fails": 13,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v2_object_storage_duration": {
+      "values": {
+        "p(99)": 195.324142,
+        "max": 195.324142,
+        "avg": 195.324142,
+        "min": 195.324142,
+        "med": 195.324142,
+        "p(90)": 195.324142,
+        "p(95)": 195.324142
+      },
+      "type": "trend",
+      "contains": "time"
+    },
+    "researchtrack_op_verify_version_history_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "fails": 1,
+        "rate": 0,
+        "passes": 0
+      }
+    },
+    "researchtrack_op_review_request_changes_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    "researchtrack_op_archive_test_requirement_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1,
+        "rate": 0.126461355796437
+      }
+    },
+    "researchtrack_op_verify_version_history_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "vus": {
+      "type": "gauge",
+      "contains": "default",
+      "values": {
+        "value": 1,
+        "min": 0,
+        "max": 1
+      }
+    },
+    "researchtrack_op_requirement_create_http_4xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v1_session_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1,
+        "rate": 0.126461355796437
+      }
+    },
+    "researchtrack_op_v2_session_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 1
+      }
+    },
+    "researchtrack_op_v2_session_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_archive_test_requirement_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v2_object_storage_network_errors": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "iteration_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(95)": 6483.201046,
+        "p(99)": 6483.201046,
+        "max": 6483.201046,
+        "avg": 6483.201046,
+        "min": 6483.201046,
+        "med": 6483.201046,
+        "p(90)": 6483.201046
+      }
+    },
+    "researchtrack_op_requirement_create_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 1
+      }
+    },
+    "researchtrack_op_review_request_changes_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v1_object_storage_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 1
+      }
+    },
+    "researchtrack_op_v1_complete_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1,
+        "rate": 0.126461355796437
+      }
+    },
+    "researchtrack_op_review_request_changes_http_4xx": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    },
+    "researchtrack_op_review_approve_network_errors": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "data_received": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "count": 37577,
+        "rate": 4752.038366762713
+      }
+    },
+    "researchtrack_op_archive_test_requirement_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_business_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 11,
+        "rate": 1.391074913760807
+      }
+    },
+    "researchtrack_op_verify_version_history_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(99)": 320.061591,
+        "max": 320.061591,
+        "avg": 320.061591,
+        "min": 320.061591,
+        "med": 320.061591,
+        "p(90)": 320.061591,
+        "p(95)": 320.061591
+      }
+    },
+    "researchtrack_op_review_request_changes_network_errors": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    "researchtrack_op_review_request_changes_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1,
+        "rate": 0.126461355796437
+      }
+    },
+    "researchtrack_op_v2_session_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v1_complete_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 1
+      }
+    },
+    "researchtrack_op_verify_version_history_http_2xx": {
+      "contains": "default",
+      "values": {
+        "count": 1,
+        "rate": 0.126461355796437
+      },
+      "type": "counter"
+    },
+    "researchtrack_op_review_approve_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_requirement_create_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "http_req_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "med": 370.887943,
+        "p(90)": 708.7462012000001,
+        "p(95)": 772.9491215999998,
+        "p(99)": 846.3445795199998,
+        "max": 864.693444,
+        "avg": 485.4841239230769,
+        "min": 195.324142
+      }
+    },
+    "researchtrack_op_v1_session_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(99)": 370.887943,
+        "max": 370.887943,
+        "avg": 370.887943,
+        "min": 370.887943,
+        "med": 370.887943,
+        "p(90)": 370.887943,
+        "p(95)": 370.887943
+      }
+    },
+    "researchtrack_op_verify_version_history_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_v2_object_storage_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    "researchtrack_op_v1_object_storage_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1,
+        "rate": 0.126461355796437
+      }
+    },
+    "researchtrack_op_requirement_create_http_5xx": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    },
+    "researchtrack_op_v2_object_storage_http_4xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_requirement_create_http_429": {
+      "values": {
+        "rate": 0,
+        "count": 0
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "http_req_tls_handshaking": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 57.48815692307692,
+        "min": 0,
+        "med": 0,
+        "p(90)": 204.19484260000002,
+        "p(95)": 274.7343947999998,
+        "p(99)": 348.29189255999984,
+        "max": 366.681267
+      }
+    }
+  }
+}

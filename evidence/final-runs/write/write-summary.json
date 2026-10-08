@@ -1,0 +1,574 @@
+{
+  "schemaVersion": 3,
+  "overview": {
+    "generatedAtUtc": "2026-10-07T16:04:03.877Z",
+    "profile": "write",
+    "purpose": "Bounded create/delete submission-requirement writes",
+    "workload": "1 iteration every 3 seconds for 30 seconds",
+    "targetP95Ms": 600,
+    "targetP95Source": "GitHub/runtime variable",
+    "targetP95SourceKey": "K6_WRITE_P95_MS",
+    "maxFailureRate": 0.02,
+    "baseUrl": "https://api.researchtrack.blipzo.xyz",
+    "projectId": "09a2eff6-2dde-4ce1-abfb-80dec08ad7f3",
+    "includeIntegrations": true,
+    "gatewayBypassEnabled": true,
+    "warmupPasses": 1,
+    "executionMode": "manual",
+    "sourceRunId": "37643509472",
+    "sourceRunAttempt": "1",
+    "sourceSha": "54dcbae67793a2103b6ef78502401bf4ab04b336",
+    "sourceWorkflow": "Azure Production - k6 Performance (VPS)",
+    "testRunDurationMs": 31533.047064,
+    "passed": true,
+    "businessRequests": 20,
+    "businessThroughput": 0.6342552294235207,
+    "businessFailureRate": 0,
+    "p50": 256.127749,
+    "p90": 341.1400874,
+    "p95": 361.46240315000006,
+    "p99": 412.1765822299999,
+    "avg": 276.43690335,
+    "min": 235.318578,
+    "max": 424.855127,
+    "http429": 0,
+    "http2xx": 20,
+    "http3xx": 0,
+    "http4xx": 0,
+    "http5xx": 0,
+    "networkErrors": 0,
+    "checksRate": 1,
+    "iterations": 10,
+    "droppedIterations": 0,
+    "maxVUs": 2,
+    "dataReceivedBytes": 33129,
+    "dataSentBytes": 11530,
+    "endpointCount": 2
+  },
+  "thresholdConfiguration": {
+    "overallP95Ms": 600,
+    "overallSource": "GitHub/runtime variable",
+    "overallSourceKey": "K6_WRITE_P95_MS",
+    "endpointP95": {},
+    "correctness": {
+        "maxFailureRate": 0.02,
+        "minimumCheckRateExclusive": 0.99,
+        "maxHttp429": 0
+      }
+  },
+  "thresholds": [
+    {
+      "metric": "researchtrack_business_failures",
+      "rule": "rate<0.02",
+      "passed": true
+    },
+    {
+      "metric": "checks",
+      "rule": "rate>0.99",
+      "passed": true
+    },
+    {
+      "metric": "researchtrack_http_429",
+      "rule": "count==0",
+      "passed": true
+    },
+    {
+      "metric": "researchtrack_business_duration",
+      "rule": "p(95)<600",
+      "passed": true
+    }
+  ],
+  "endpoints": [
+    {
+      "operation": "requirement_create",
+      "label": "Create submission requirement",
+      "category": "Submission write",
+      "method": "POST",
+      "requests": 10,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 279.21170689999997,
+      "min": 251.03603,
+      "p50": 259.729573,
+      "p90": 309.4330618999999,
+      "p95": 367.14409444999984,
+      "p99": 413.31292049,
+      "max": 424.855127,
+      "http2xx": 10,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    },
+    {
+      "operation": "requirement_delete",
+      "label": "Delete submission requirement",
+      "category": "Submission write",
+      "method": "DELETE",
+      "requests": 10,
+      "failureRate": 0,
+      "successRate": 1,
+      "avg": 273.6620998,
+      "min": 235.318578,
+      "p50": 251.7921255,
+      "p90": 341.14008739999997,
+      "p95": 349.6330157,
+      "p99": 356.42735834,
+      "max": 358.125944,
+      "http2xx": 10,
+      "http3xx": 0,
+      "http4xx": 0,
+      "http5xx": 0,
+      "http429": 0,
+      "networkErrors": 0,
+      "targetP95Ms": null,
+      "thresholdSource": null,
+      "thresholdPassed": null
+    }
+  ],
+  "rawMetrics": {
+    "researchtrack_business_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 20
+      },
+      "thresholds": {
+        "rate<0.02": {
+          "ok": true
+        }
+      }
+    },
+    "researchtrack_op_requirement_create_http_2xx": {
+      "contains": "default",
+      "values": {
+        "count": 10,
+        "rate": 0.3171276147117604
+      },
+      "type": "counter"
+    },
+    "checks": {
+      "contains": "default",
+      "values": {
+        "rate": 1,
+        "passes": 20,
+        "fails": 0
+      },
+      "thresholds": {
+        "rate>0.99": {
+          "ok": true
+        }
+      },
+      "type": "rate"
+    },
+    "http_req_tls_handshaking": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "med": 0,
+        "p(90)": 184.61421180000045,
+        "p(95)": 208.684671,
+        "p(99)": 260.44222297999994,
+        "max": 274.150784,
+        "avg": 31.27952763636364,
+        "min": 0
+      }
+    },
+    "vus": {
+      "type": "gauge",
+      "contains": "default",
+      "values": {
+        "min": 0,
+        "max": 1,
+        "value": 0
+      }
+    },
+    "researchtrack_op_requirement_delete_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 10,
+        "rate": 0.3171276147117604
+      }
+    },
+    "http_req_waiting": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(90)": 356.9680483,
+        "p(95)": 421.18268854999997,
+        "p(99)": 620.9852769099998,
+        "max": 673.208692,
+        "avg": 297.1231527272728,
+        "min": 235.055649,
+        "med": 258.206563
+      }
+    },
+    "researchtrack_business_network_errors": {
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "vus_max": {
+      "values": {
+        "min": 2,
+        "max": 2,
+        "value": 2
+      },
+      "type": "gauge",
+      "contains": "default"
+    },
+    "researchtrack_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "thresholds": {
+        "count==0": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_blocked": {
+      "contains": "time",
+      "values": {
+        "max": 487.417475,
+        "avg": 58.510344318181815,
+        "min": 0.000331,
+        "med": 0.00047099999999999996,
+        "p(90)": 354.1188592000009,
+        "p(95)": 405.6907335,
+        "p(99)": 470.38998304999996
+      },
+      "type": "trend"
+    },
+    "researchtrack_op_requirement_create_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "iterations": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 10,
+        "rate": 0.3171276147117604
+      }
+    },
+    "data_sent": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "rate": 365.64813976265975,
+        "count": 11530
+      }
+    },
+    "researchtrack_business_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_requirement_create_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 10
+      }
+    },
+    "researchtrack_op_requirement_create_requests": {
+      "contains": "default",
+      "values": {
+        "count": 10,
+        "rate": 0.3171276147117604
+      },
+      "type": "counter"
+    },
+    "data_received": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "rate": 1050.612074778591,
+        "count": 33129
+      }
+    },
+    "researchtrack_op_requirement_delete_http_4xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "iteration_duration": {
+      "contains": "time",
+      "values": {
+        "avg": 740.5063885,
+        "min": 589.723406,
+        "med": 635.2528775,
+        "p(90)": 1108.5255129,
+        "p(95)": 1184.2993519499998,
+        "p(99)": 1244.9184231899999,
+        "max": 1260.073191
+      },
+      "type": "trend"
+    },
+    "researchtrack_op_requirement_delete_duration": {
+      "values": {
+        "max": 358.125944,
+        "avg": 273.6620998,
+        "min": 235.318578,
+        "med": 251.7921255,
+        "p(90)": 341.14008739999997,
+        "p(95)": 349.6330157,
+        "p(99)": 356.42735834
+      },
+      "type": "trend",
+      "contains": "time"
+    },
+    "researchtrack_op_requirement_create_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_requirement_create_network_errors": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_requirement_create_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    "researchtrack_op_requirement_delete_failures": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 10
+      }
+    },
+    "researchtrack_op_requirement_delete_http_429": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_business_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 20,
+        "rate": 0.6342552294235207
+      }
+    },
+    "researchtrack_business_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "http_req_sending": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(90)": 0.9099933000000009,
+        "p(95)": 2.1255079999999986,
+        "p(99)": 2.3096751099999997,
+        "max": 2.342269,
+        "avg": 0.4655605454545455,
+        "min": 0.124782,
+        "med": 0.2461785
+      }
+    },
+    "researchtrack_business_duration": {
+      "thresholds": {
+        "p(95)<600": {
+          "ok": true
+        }
+      },
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "med": 256.127749,
+        "p(90)": 341.1400874,
+        "p(95)": 361.46240315000006,
+        "p(99)": 412.1765822299999,
+        "max": 424.855127,
+        "avg": 276.43690335,
+        "min": 235.318578
+      }
+    },
+    "http_req_duration{expected_response:true}": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 298.1913881818181,
+        "min": 235.318578,
+        "med": 259.0489305,
+        "p(90)": 357.445144,
+        "p(95)": 421.51866784999993,
+        "p(99)": 626.5416545799998,
+        "max": 680.154529
+      }
+    },
+    "researchtrack_op_requirement_delete_network_errors": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_business_http_4xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "http_req_receiving": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "med": 0.14694849999999998,
+        "p(90)": 0.7251761000000007,
+        "p(95)": 2.404033499999999,
+        "p(99)": 5.832304279999997,
+        "max": 6.720548,
+        "avg": 0.6026749090909093,
+        "min": 0.08554
+      }
+    },
+    "researchtrack_op_requirement_delete_requests": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 10,
+        "rate": 0.3171276147117604
+      }
+    },
+    "http_req_connecting": {
+      "contains": "time",
+      "values": {
+        "p(99)": 195.41636169999998,
+        "max": 197.199268,
+        "avg": 26.090370590909092,
+        "min": 0,
+        "med": 0,
+        "p(90)": 169.2716823000004,
+        "p(95)": 188.67775845
+      },
+      "type": "trend"
+    },
+    "researchtrack_op_requirement_delete_http_3xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "researchtrack_op_requirement_create_http_4xx": {
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      },
+      "type": "counter"
+    },
+    "researchtrack_op_requirement_delete_http_5xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 0,
+        "rate": 0
+      }
+    },
+    "http_reqs": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 22,
+        "rate": 0.6976807523658729
+      }
+    },
+    "researchtrack_business_http_2xx": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "rate": 0.6342552294235207,
+        "count": 20
+      }
+    },
+    "http_req_duration": {
+      "contains": "time",
+      "values": {
+        "p(95)": 421.51866784999993,
+        "p(99)": 626.5416545799998,
+        "max": 680.154529,
+        "avg": 298.1913881818181,
+        "min": 235.318578,
+        "med": 259.0489305,
+        "p(90)": 357.445144
+      },
+      "type": "trend"
+    },
+    "researchtrack_op_requirement_create_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "med": 259.729573,
+        "p(90)": 309.4330618999999,
+        "p(95)": 367.14409444999984,
+        "p(99)": 413.31292049,
+        "max": 424.855127,
+        "avg": 279.21170689999997,
+        "min": 251.03603
+      }
+    },
+    "http_req_failed": {
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 22
+      },
+      "type": "rate",
+      "contains": "default"
+    }
+  }
+}

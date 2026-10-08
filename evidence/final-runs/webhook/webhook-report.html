@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ResearchTrack k6 webhook report</title>
+<style>
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#1f2937;background:#f8fafc}body{margin:0;padding:32px}.wrap{max-width:1320px;margin:auto}.hero,.card{background:white;border:1px solid #e5e7eb;border-radius:14px;padding:22px;margin:0 0 18px;box-shadow:0 1px 2px rgba(0,0,0,.04)}h1{margin:0 0 8px;font-size:30px}h2{font-size:19px;margin:0 0 14px}.muted{color:#64748b}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.metric{border:1px solid #e5e7eb;border-radius:10px;padding:14px}.metric b{display:block;font-size:22px;margin-top:4px}.pill{display:inline-block;padding:5px 10px;border-radius:999px;font-weight:700;font-size:12px}.pass{background:#dcfce7;color:#166534}.fail{background:#fee2e2;color:#991b1b}.neutral{background:#e2e8f0;color:#475569}.warn{background:#fff7ed;color:#9a3412;font-weight:700}table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:9px 10px;border-bottom:1px solid #e5e7eb;text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}th{background:#f8fafc;position:sticky;top:0}.table{overflow:auto}.bad{background:#fff7f7}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}.footer{font-size:12px;color:#64748b;line-height:1.6}@media print{body{padding:0;background:white}.hero,.card{box-shadow:none;break-inside:avoid}th{position:static}}
+</style></head><body><div class="wrap">
+<section class="hero"><span class="pill pass">PASS</span><h1>ResearchTrack k6 — webhook</h1><p class="muted">Signed Jira webhook burst and ingestion capacity · 2026-10-07T16:19:26.998Z</p><p><strong>Workload:</strong> Ramping signed webhook arrival rate 1→2→12 req/s (50 seconds)<br><strong>Target:</strong> https://api.researchtrack.blipzo.xyz · <strong>Project:</strong> 09a2eff6-2dde-4ce1-abfb-80dec08ad7f3<br><strong>Execution:</strong> manual · <strong>Warm-up:</strong> 1 pass(es) · <strong>Integrations:</strong> true · <strong>Gateway exemption:</strong> true</p></section>
+<section class="card"><h2>Executive metrics</h2><div class="grid">
+<div class="metric">Business requests<b>383</b></div>
+<div class="metric">Throughput<b>7.61 req/s</b></div>
+<div class="metric">Failure rate<b>0.00%</b></div>
+<div class="metric">p50<b>328.3 ms</b></div>
+<div class="metric">p90<b>731.8 ms</b></div>
+<div class="metric ">p95 / target<b>900.1 ms / 1000 ms</b></div>
+<div class="metric">p99<b>1011.0 ms</b></div>
+<div class="metric">HTTP 429<b>0</b></div>
+</div></section>
+<section class="card"><h2>Runtime threshold configuration</h2><p><strong>Overall webhook p95:</strong> 1000 ms · source: GitHub/runtime variable (K6_WEBHOOK_P95_MS)</p><p><strong>Correctness gates:</strong> failure rate &lt; 2.00%, checks &gt; 99%, HTTP 429 = 0.</p><p class="muted">No endpoint-specific p95 gates configured for operations measured in this run.</p></section>
+<section class="card"><h2>Endpoint performance</h2><div class="table"><table><thead><tr><th>Operation</th><th>Method</th><th>Req</th><th>Fail</th><th>Avg</th><th>p50</th><th>p90</th><th>p95</th><th>p99</th><th>Max</th><th>Target p95</th><th>Gate</th><th>4xx</th><th>5xx</th><th>429</th></tr></thead><tbody>
+    <tr class="">
+      <td><strong>Jira webhook ingestion</strong><br><small>Webhook</small></td>
+      <td>POST</td><td>383</td><td>0.00%</td>
+      <td>415.0</td><td>328.3</td><td>731.8</td>
+      <td class="">900.1</td>
+      <td>1011.0</td><td>1084.0</td>
+      <td>—</td><td><span class="pill neutral">Not gated</span></td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr></tbody></table></div><p class="muted">Latency columns are milliseconds. Endpoint gates appear only when configured through the runtime endpoint threshold map.</p></section>
+<section class="card"><h2>Jira issues diagnostic</h2><p class="muted">Jira issues was not measured in this run.</p></section>
+<section class="card"><h2>Slowest endpoints by p95</h2><ol><li><strong>Jira webhook ingestion</strong>: p95 900.1 ms · p99 1011.0 ms · failure 0.00%</li></ol></section>
+<section class="card"><h2>HTTP outcomes</h2><div class="grid"><div class="metric">2xx<b>383</b></div><div class="metric">3xx<b>0</b></div><div class="metric">4xx<b>0</b></div><div class="metric">5xx<b>0</b></div><div class="metric">Network errors<b>0</b></div><div class="metric">Dropped iterations<b>2</b></div></div></section>
+<section class="card"><h2>Threshold evaluation</h2><div class="table"><table><thead><tr><th>Metric</th><th>Rule</th><th>Result</th></tr></thead><tbody><tr><td><code>researchtrack_http_429</code></td><td><code>count==0</code></td><td><span class="pill pass">PASS</span></td></tr><tr><td><code>checks</code></td><td><code>rate&gt;0.99</code></td><td><span class="pill pass">PASS</span></td></tr><tr><td><code>researchtrack_business_failures</code></td><td><code>rate&lt;0.02</code></td><td><span class="pill pass">PASS</span></td></tr><tr><td><code>researchtrack_business_duration</code></td><td><code>p(95)&lt;1000</code></td><td><span class="pill pass">PASS</span></td></tr></tbody></table></div></section>
+<section class="card footer"><h2>Methodology notes</h2><p>Business metrics exclude authentication and warm-up traffic. Profile p95 thresholds come from runtime GitHub variables when configured, otherwise the documented fallback is used. Optional endpoint-specific p95 gates come from <code>K6_ENDPOINT_P95_THRESHOLDS_JSON</code>, allowing Jira Issues to have a justified target without weakening fast core routes.</p><p>Threshold failures remain valid evidence: reports are written before k6 exits non-zero, and the Azure/Gateway restoration path still runs.</p><p>GitHub workflow: Azure Production - k6 Performance (VPS) · run 37643585579 · attempt 1 · source SHA 54dcbae67793a2103b6ef78502401bf4ab04b336.</p></section>
+</div></body></html>

@@ -1,0 +1,2 @@
+"operation","label","category","method","requests","failure_rate","success_rate","avg_ms","p50_ms","p90_ms","p95_ms","p99_ms","max_ms","target_p95_ms","threshold_source","threshold_gate","http_2xx","http_3xx","http_4xx","http_5xx","http_429","network_errors"
+"jira_webhook","Jira webhook ingestion","Webhook","POST","383","0","1","414.9524585117495","328.261627","731.7912544","900.0913767999998","1011.0412639600003","1084.0068","","","Not gated","383","0","0","0","0","0"
