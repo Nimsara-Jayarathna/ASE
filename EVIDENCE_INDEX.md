@@ -1,13 +1,40 @@
-# Evidence Index
+# ResearchTrack SE3112 — Master Evidence Index
 
-| Profile | GitHub run | Extracted folder | Standalone HTML | Markdown | JSON | CSV | Raw log |
-|---|---:|---|---|---|---|---|---|
-| Smoke | 37643383515 | `evidence/final-runs/smoke/` | `smoke-report.html` | `smoke-report.md` | `smoke-summary.json` | `smoke-endpoints.csv` | `smoke.log` |
-| Load | 37643412866 | `evidence/final-runs/load/` | `load-report.html` | `load-report.md` | `load-summary.json` | `load-endpoints.csv` | `load.log` |
-| Stress | 37643438215 | `evidence/final-runs/stress/` | `stress-report.html` | `stress-report.md` | `stress-summary.json` | `stress-endpoints.csv` | `stress.log` |
-| Spike | 37643479581 | `evidence/final-runs/spike/` | `spike-report.html` | `spike-report.md` | `spike-summary.json` | `spike-endpoints.csv` | `spike.log` |
-| Write | 37643509472 | `evidence/final-runs/write/` | `write-report.html` | `write-report.md` | `write-summary.json` | `write-endpoints.csv` | `write.log` |
-| Lifecycle | 37643554102 | `evidence/final-runs/lifecycle/` | `lifecycle-report.html` | `lifecycle-report.md` | `lifecycle-summary.json` | `lifecycle-endpoints.csv` | `lifecycle.log` |
-| Webhook | 37643585579 | `evidence/final-runs/webhook/` | `webhook-report.html` | `webhook-report.md` | `webhook-summary.json` | `webhook-endpoints.csv` | `webhook.log` |
+## Contribution index
 
-Original GitHub artifact ZIP files are stored unchanged under `evidence/source-artifacts/`.
+| Contribution | Owner | Status | Primary evidence |
+|---|---|:---:|---|
+| Unit Testing & Mocking | Sachith | ✅ Integrated | `evidence/unit/coverage/coverage-summary.md` |
+| Load & Performance Testing | Nimsara | ✅ Integrated | `evidence/load/EVIDENCE_INDEX.md` |
+| Mutation Testing | Pamudi | ⏳ Pending artifact integration | `evidence/mutation/README.md` |
+| Code Quality & Metrics | Nimthara | ⏳ Pending implementation/evidence | `evidence/code-quality/README.md` |
+
+## Unit Testing & Mocking
+
+**Source GitHub Actions artifact:** `unit-mocking-coverage-38112130327-1.zip`
+
+| Evidence | Path |
+|---|---|
+| Coverage summary | `evidence/unit/coverage/coverage-summary.md` |
+| Coverage metrics environment file | `evidence/unit/coverage/coverage-metrics.env` |
+| Business-scope HTML report | `evidence/unit/coverage/business/index.html` |
+| Business-scope Cobertura XML | `evidence/unit/coverage/business/Cobertura.xml` |
+| All-source HTML report | `evidence/unit/coverage/all-source/index.html` |
+| All-source Cobertura XML | `evidence/unit/coverage/all-source/Cobertura.xml` |
+| Original Actions artifact | `evidence/unit/source-artifacts/unit-mocking-coverage-38112130327-1.zip` |
+| Integrity manifest | `evidence/unit/MANIFEST.md` |
+
+### Final unit coverage
+
+| Scope | Line | Branch |
+|---|---:|---:|
+| All production source | **65.7%** | **52.3%** |
+| Business-logic quality-gate scope | **75.8%** | **62.7%** |
+
+## Load & Performance Testing
+
+The performance evidence remains complete under `evidence/load/`. See `evidence/load/EVIDENCE_INDEX.md` for the seven run IDs and per-profile report paths.
+
+## Pending evidence
+
+Mutation evidence will be integrated under `evidence/mutation/` when the final GitHub Actions artifact is supplied. Code-quality evidence will follow the same structure under `evidence/code-quality/` after Nimthara's final run.
