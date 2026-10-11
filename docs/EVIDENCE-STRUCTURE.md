@@ -21,6 +21,11 @@ evidence/
 │   ├── final-runs/
 │   └── source-artifacts/
 ├── mutation/
+│   ├── README.md
+│   ├── EVIDENCE_INDEX.md
+│   ├── MANIFEST.md
+│   ├── reports/
+│   └── source-artifacts/
 └── code-quality/
 ```
 
@@ -34,4 +39,4 @@ Each completed contribution should contain:
 4. the original GitHub Actions artifact ZIP under `source-artifacts/`;
 5. a checksum manifest for final evidence integrity where practical.
 
-Unit and Load currently follow this convention. Mutation will be added only after its final artifact is supplied; Code Quality will follow after its final implementation/evidence run.
+Unit, Load, and Mutation now follow this convention. Code Quality will follow after its final implementation/evidence run.

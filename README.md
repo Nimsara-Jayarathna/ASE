@@ -16,7 +16,7 @@ The evidence is organized by the four individual testing contributions so that e
 └── evidence/
     ├── unit/             # Sachith — Unit Testing & Mocking
     ├── load/             # Nimsara — Load & Performance Testing
-    ├── mutation/         # Pamudi — Mutation Testing (artifact integration pending)
+    ├── mutation/         # Pamudi — Mutation Testing
     └── code-quality/     # Nimthara — Code Quality & Metrics (evidence pending)
 ```
 
@@ -26,7 +26,7 @@ The evidence is organized by the four individual testing contributions so that e
 |---|---|---|
 | Unit Testing & Mocking | Sachith | **Integrated** — final coverage artifact and reports included |
 | Load & Performance Testing | Nimsara | **Integrated** — seven final k6 evidence runs retained |
-| Mutation Testing | Pamudi | **Structure ready** — final artifact will be added when supplied |
+| Mutation Testing | Pamudi | **Integrated** — successful final project-wide Stryker artifact and reports included |
 | Code Quality & Metrics | Nimthara | **Structure ready** — implementation/evidence pending |
 
 ## Unit Testing & Mocking — current final evidence
@@ -48,9 +48,15 @@ The existing final k6 package has been retained and moved under `evidence/load/`
 
 Open `evidence/load/README.md` for the full performance-testing evidence package.
 
-## Mutation and Code Quality
+## Mutation Testing
 
-The directories exist now so the final repository structure will not need to change again. They intentionally contain only status/readme files until the final artifacts are supplied and validated.
+The final successful GitHub Actions mutation artifact is integrated under `evidence/mutation/`. The complete `all` run achieved a **69.99%** weighted mutation score and passed every service regression floor plus the **65.00% overall gate**.
+
+Open `evidence/mutation/README.md` for the evidence guide and `evidence/mutation/reports/mutation-summary.md` for the final project-wide summary.
+
+## Code Quality & Metrics
+
+The `evidence/code-quality/` directory remains reserved for Nimthara's final Code Quality & Metrics implementation and evidence.
 
 ## Evidence handling rule
 
