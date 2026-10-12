@@ -7,7 +7,7 @@
 | Unit Testing & Mocking | Sachith | ✅ Integrated | `evidence/unit/coverage/coverage-summary.md` |
 | Load & Performance Testing | Nimsara | ✅ Integrated | `evidence/load/EVIDENCE_INDEX.md` |
 | Mutation Testing | Pamudi | ✅ Integrated | `evidence/mutation/reports/mutation-summary.md` |
-| Code Quality & Metrics | Nimthara | ⏳ Pending implementation/evidence | `evidence/code-quality/README.md` |
+| Code Quality & Metrics | Nimthara | ✅ Integrated | `evidence/code-quality/README.md` |
 
 ## Unit Testing & Mocking
 
@@ -61,6 +61,37 @@ The performance evidence remains complete under `evidence/load/`. See `evidence/
 
 All seven service-level regression gates passed.
 
-## Pending evidence
+## Code Quality & Metrics
 
-Only Code Quality & Metrics remains pending. Its final evidence will be integrated under `evidence/code-quality/` after Nimthara's implementation and final run.
+**Final original GitHub Actions artifact:** `evidence/code-quality/source-artifacts/04-final-quality-gate-pass.zip`  
+**Final SonarQube analysis ID:** `a2ec6507-83b5-429d-bb4e-5c8831f70c86`  
+**Final cloud gate:** **OK**, all **6 / 6** conditions passed, `ignoredConditions=false`.
+
+| Evidence | Path |
+|---|---|
+| Code Quality & Metrics guide | `evidence/code-quality/README.md` |
+| Detailed evidence index | `evidence/code-quality/EVIDENCE_INDEX.md` |
+| Genuine final SonarQube cloud summary | `evidence/code-quality/final-run/sonarqube-summary.md` |
+| Six gate condition results | `evidence/code-quality/final-run/quality-gate.json` |
+| Code-quality measures | `evidence/code-quality/final-run/measures.json` |
+| Cloud compute engine proof | `evidence/code-quality/final-run/ce-task.json` |
+| Seven real OpenCover reports | `evidence/code-quality/final-run/coverage/` |
+| Before/after original artifacts and extracted JSON | `evidence/code-quality/source-artifacts/` and `evidence/code-quality/history/` |
+| Standalone, offline comparison view | `evidence/code-quality/reports/quality-evolution.html` |
+| Integrity manifest | `evidence/code-quality/MANIFEST.md` |
+| Offline verification | `python3 evidence/code-quality/scripts/verify-evidence.py` |
+
+### Final static-analysis metrics
+
+| Indicator | Verified result |
+|---|---:|
+| New-code coverage | **96.7%** (threshold **80%**) |
+| Overall test coverage | **60.2%** |
+| Overall duplicated lines | **2.4%** |
+| New-code duplicated lines | **0.0%** |
+| Code smells | **86** |
+| Technical debt | **95 minutes** |
+| Lines of code | **27,006** |
+| Cyclomatic / cognitive complexity | **4,532 / 2,222** |
+
+**Status:** All four individual contribution areas now have integrated proof in this ASE evidence repository. Do not mistake the passing *new-code* gate for 80% overall coverage or for proof of the GitHub environment variable `SONAR_ENFORCE_GATE=true`.

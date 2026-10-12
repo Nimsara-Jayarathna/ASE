@@ -1489,3 +1489,28 @@ The group should consistently explain the solution using this idea:
 > ResearchTrack already had a strong automated backend/frontend test foundation. We retained that engineering work and extended it into a complete SE3112 microservice testing pipeline. Sachith strengthened isolated unit testing with parameterized cases, test doubles and failure-path verification. Pamudi evaluated and improved test effectiveness using mutation testing. Nimsara measured system behaviour under realistic concurrency, stress and webhook bursts using k6 with thresholds and operational evidence. Nimthara converted existing checks and coverage into measurable code-quality indicators and enforceable quality gates. All of these layers are integrated through CI so the final project can be evaluated as one repeatable automated testing system.
 
 That is the implementation direction the team should follow.
+
+---
+
+# Appendix A — Final Verified Code Quality & Metrics Evidence (12 October 2026)
+
+This appendix records the **completed result** after the prospective plan above was drafted. It does not retroactively imply that every optional recommendation in the original plan (e.g., frontend coverage) was implemented. The delivered and evidenced contribution is **backend static code analysis and quality metrics**, with genuine Cloud API reporting and integrated unit-test coverage.
+
+| Item | Final observed result / artifact |
+|---|---|
+| Owner | Nimthara — Code Quality & Metrics |
+| Native automation | CSharpier 1.3.0, Roslyn IDE0005/IDE0065 style checks, eight Release builds via `Backend Code Quality` |
+| Cloud analysis | SonarScanner for .NET 11.3.0, eight production projects, seven existing OpenCover test suites |
+| SonarQube Compute Engine | **SUCCESS** — analysis `a2ec6507-83b5-429d-bb4e-5c8831f70c86` |
+| Quality Gate | **OK** — all **6/6** conditions passed, with no small-change exception |
+| New-code coverage | **96.7%**, exceeding **80%** new-code threshold |
+| Overall coverage | **60.2%** (not an 80% global target) |
+| Other measured indicators | 27,006 LOC, 2.4% duplication, 86 code smells, 95 min technical debt, 4,532 cyclomatic and 2,222 cognitive complexity |
+| Raw proof | `evidence/code-quality/source-artifacts/04-final-quality-gate-pass.zip` and `evidence/code-quality/final-run/quality-gate.json` |
+| VIVA comparison | `evidence/code-quality/reports/quality-evolution.html` and `evidence/code-quality/docs/02-FINAL-RESULTS.md` |
+
+**Measured failure → improvement → pass:** A genuine early gate failed with missing coverage (0.0% reported new-code coverage). After collection from the existing seven unit suites, new-code coverage was 73.3% and still below the 80% gate. Targeted AuthService configuration tests raised the observed value to 96.7%, producing a passing cloud gate. The original artifacts for all four analysis stages are preserved under `evidence/code-quality/source-artifacts/`.
+
+**CI enforcement nuance:** SonarScanner supports rejecting cloud gate failures when the GitHub Environment variable `SONAR_ENFORCE_GATE=true`, but the saved run cannot independently prove the variable's setting. Verify in `researchtrack-backend` → Settings → Environments → `production` before claiming active fail-on-gate enforcement.
+
+**Final evidence package:** All four contribution evidence trees — Unit, Load, Mutation, and Code Quality — are integrated into `ASE`. The first three sections were retained unchanged to preserve the group’s original artifacts and member ownership.

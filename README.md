@@ -17,7 +17,7 @@ The evidence is organized by the four individual testing contributions so that e
     ├── unit/             # Sachith — Unit Testing & Mocking
     ├── load/             # Nimsara — Load & Performance Testing
     ├── mutation/         # Pamudi — Mutation Testing
-    └── code-quality/     # Nimthara — Code Quality & Metrics (evidence pending)
+    └── code-quality/     # Nimthara — Code Quality & Metrics (final gate pass + artifacts)
 ```
 
 ## Current status
@@ -27,7 +27,7 @@ The evidence is organized by the four individual testing contributions so that e
 | Unit Testing & Mocking | Sachith | **Integrated** — final coverage artifact and reports included |
 | Load & Performance Testing | Nimsara | **Integrated** — seven final k6 evidence runs retained |
 | Mutation Testing | Pamudi | **Integrated** — successful final project-wide Stryker artifact and reports included |
-| Code Quality & Metrics | Nimthara | **Structure ready** — implementation/evidence pending |
+| Code Quality & Metrics | Nimthara | **Integrated** — completed SonarQube Cloud Quality Gate with verified OpenCover evidence |
 
 ## Unit Testing & Mocking — current final evidence
 
@@ -56,7 +56,9 @@ Open `evidence/mutation/README.md` for the evidence guide and `evidence/mutation
 
 ## Code Quality & Metrics
 
-The `evidence/code-quality/` directory remains reserved for Nimthara's final Code Quality & Metrics implementation and evidence.
+Nimthara's final SonarQube Cloud evidence is fully integrated. The verified **Quality Gate is OK** (all six conditions), with **96.7% new-code coverage** against the 80% threshold, **60.2% overall coverage**, and **seven** authentic OpenCover reports from existing .NET unit-test suites. The build-aware SonarScanner 11.3.0 scanned eight production projects. All original downloaded artifacts (including the earlier failed coverage runs) are preserved byte-for-byte.
+
+Open `evidence/code-quality/README.md` for the complete evidence guide, `evidence/code-quality/reports/quality-evolution.html` for an offline summary, and `evidence/code-quality/final-run/quality-gate.json` for the authoritative six-condition gate decision. **`SONAR_ENFORCE_GATE` still needs operational confirmation** in the GitHub environment if strict future failure enforcement is required.
 
 ## Evidence handling rule
 
