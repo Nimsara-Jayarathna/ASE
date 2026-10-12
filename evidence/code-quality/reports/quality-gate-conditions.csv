@@ -1,0 +1,7 @@
+Condition,Status,Actual,Threshold,Comparison
+new_reliability_rating,OK,1,1,GT
+new_security_rating,OK,1,1,GT
+new_maintainability_rating,OK,1,1,GT
+new_coverage,OK,96.7,80,LT
+new_duplicated_lines_density,OK,0.0,3,GT
+new_security_hotspots_reviewed,OK,100.0,100,LT

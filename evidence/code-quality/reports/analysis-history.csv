@@ -1,0 +1,5 @@
+Stage,Cloud analysis ID,Cloud gate,New-code coverage,Overall coverage (%),Code smells,Technical debt (minutes),LOC,Duplicated lines (%)
+01-pre-coverage-baseline,117303d4-4803-402e-95cc-a9c75a0390a5,OK,Not measured,Not measured,85,105,26818,2.4
+02-missing-coverage,ae49e808-6b21-4b84-847d-00bac82b336d,ERROR,Not measured,Not measured,83,95,26822,2.4
+03-coverage-before-targeted-tests,b26378dd-ba0c-4b63-8afb-1a31cc617716,ERROR,73.3%,60.2,86,95,27006,2.4
+04-final-quality-gate-pass,a2ec6507-83b5-429d-bb4e-5c8831f70c86,OK,96.7%,60.2,86,95,27006,2.4

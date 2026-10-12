@@ -1,0 +1,7 @@
+artifacts/code-quality/sonar/ci/coverage/ResearchTrack.AuthService.Tests/c4391454-24e0-4571-b2cf-be02fbef7dfc/coverage.opencover.xml
+artifacts/code-quality/sonar/ci/coverage/ResearchTrack.Gateway.Tests/e8960977-05e0-4182-9d43-ded7cd433009/coverage.opencover.xml
+artifacts/code-quality/sonar/ci/coverage/ResearchTrack.GitHubService.Tests/d226584b-594e-4cac-87ed-7541f56dd1bb/coverage.opencover.xml
+artifacts/code-quality/sonar/ci/coverage/ResearchTrack.JiraService.Tests/25bc6f1d-459c-470e-843e-c96fe198ba23/coverage.opencover.xml
+artifacts/code-quality/sonar/ci/coverage/ResearchTrack.MeetingService.Tests/e878c331-a3af-4ca0-8406-757b76f75a51/coverage.opencover.xml
+artifacts/code-quality/sonar/ci/coverage/ResearchTrack.ProjectService.Tests/0e920fb6-4cde-4cab-961d-a0f38b9d5091/coverage.opencover.xml
+artifacts/code-quality/sonar/ci/coverage/ResearchTrack.SubmissionService.Tests/b05d9ffc-8a2b-4580-b0be-8dc76c7e1aa2/coverage.opencover.xml

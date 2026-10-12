@@ -1,0 +1,7 @@
+organization=nimsara-jayarathna
+projectKey=Nimsara-Jayarathna_researchtrack-backend
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.110499
+dashboardUrl=https://sonarcloud.io/dashboard?id=Nimsara-Jayarathna_researchtrack-backend&branch=main
+ceTaskId=AaEvRrv8qxZKWC9KtOkb
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AaEvRrv8qxZKWC9KtOkb

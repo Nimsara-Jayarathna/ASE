@@ -1,0 +1,8 @@
+Unit test suite,Sequence coverage (%),Branch coverage (%),Visited sequence points,Sequence points
+ResearchTrack.AuthService.Tests,61.36,63.61,1696,2764
+ResearchTrack.Gateway.Tests,63.72,40.52,506,794
+ResearchTrack.GitHubService.Tests,45.96,48.09,4721,10271
+ResearchTrack.JiraService.Tests,46.42,35.46,1962,4226
+ResearchTrack.MeetingService.Tests,53.2,38.23,972,1827
+ResearchTrack.ProjectService.Tests,71.42,62.37,1557,2180
+ResearchTrack.SubmissionService.Tests,51.15,52.11,1904,3722
